@@ -17,6 +17,7 @@ export default defineConfig([
             reactRefresh.configs.vite,
             react.configs.recommended,
             'eslint-config-prettier',
+            '@feature-sliced',
         ],
         languageOptions: {
             ecmaVersion: 2020,
@@ -25,6 +26,11 @@ export default defineConfig([
         settings: {
             react: {
                 version: 'detect',
+            },
+            'import/resolver': {
+                typescript: {
+                    alwaysTryTypes: true,
+                },
             },
         },
     },
