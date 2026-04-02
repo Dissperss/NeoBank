@@ -1,7 +1,10 @@
+import { Hero } from '@/widgets/hero'
+import { cardDesigns } from '@/shared/data/cardDesigns'
+
 export const HomePage = () => {
     return (
         <>
-            <h2>World</h2>
+            <Hero data={cardDesigns} />
         </>
     )
 }

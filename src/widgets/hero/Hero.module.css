@@ -1,0 +1,31 @@
+.hero__section {
+    padding-top: 130px;
+}
+
+.hero__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.hero__block {
+    max-width: 610px;
+}
+
+.hero__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 104%;
+    color: #1c1c1e;
+}
+
+.hero__btn {
+    margin-top: 35px;
+}
+
+.hero__cards_list {
+    max-width: 520px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}

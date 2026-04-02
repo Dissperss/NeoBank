@@ -1,9 +1,8 @@
-import styles from './Section.module.css'
-
 type SectionProps = {
     children: React.ReactNode
+    className?: string
 }
 
-export const Section = ({ children }: SectionProps) => {
-    return <section className={styles.section}>{children}</section>
+export const Section = ({ children, className }: SectionProps) => {
+    return <section className={className}>{children}</section>
 }

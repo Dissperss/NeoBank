@@ -26,7 +26,9 @@ export const Header = () => {
                             </li>
                         </ul>
                     </nav>
-                    <Button>Online Bank</Button>
+                    <Button onClick={() => console.log('Click!')}>
+                        Online Bank
+                    </Button>
                 </div>
             </Container>
         </header>
