@@ -1,7 +1,7 @@
-import designBlack from '@/shared/assets/images/cardDesign1.png'
-import designSpace from '@/shared/assets/images/cardDesign2.png'
-import designNeon from '@/shared/assets/images/cardDesign3.png'
-import designDrops from '@/shared/assets/images/cardDesign4.png'
+import designBlack from '@/shared/assets/images/hero/cardDesign1.png'
+import designSpace from '@/shared/assets/images/hero/cardDesign2.png'
+import designNeon from '@/shared/assets/images/hero/cardDesign3.png'
+import designDrops from '@/shared/assets/images/hero/cardDesign4.png'
 
 export type CardDesign = {
     id: number
