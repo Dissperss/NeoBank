@@ -1,0 +1,26 @@
+.map__section {
+    padding-top: 50px;
+}
+
+.map__title {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 167%;
+    text-align: center;
+    color: #1c1c1c;
+}
+
+.map__subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 313%;
+    text-align: center;
+    color: #1c1c1e;
+}
+
+.map__img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 50px auto 0 auto;
+}
