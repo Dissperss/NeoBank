@@ -1,0 +1,11 @@
+.loading__text {
+    text-align: center;
+}
+
+.loading__img {
+    display: block;
+    margin: 15px auto 0 auto;
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: cover;
+}
