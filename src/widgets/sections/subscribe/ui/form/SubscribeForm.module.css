@@ -11,3 +11,28 @@
     box-shadow: 0 10px 20px 0 rgba(54, 58, 120, 0.1);
     background: #fff;
 }
+
+@media (max-width: 919px) {
+    .subscribe__form {
+        margin-top: 30px;
+        padding: 18px 24px;
+        gap: 16px;
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 599px) {
+    .subscribe__form {
+        flex-direction: column;
+        padding: 20px;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 499px) {
+    .subscribe__form {
+        margin-top: 22px;
+        padding: 16px;
+        border-radius: 14px;
+    }
+}
