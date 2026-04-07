@@ -11,3 +11,14 @@
     line-height: 214%;
     color: #4f5665;
 }
+
+@media (max-width: 499px) {
+    .features__list_item {
+        gap: 10px;
+    }
+
+    .list__item_text {
+        font-size: 13px;
+        line-height: 180%;
+    }
+}

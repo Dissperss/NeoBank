@@ -59,3 +59,69 @@
     letter-spacing: 0.02em;
     color: #fff;
 }
+
+@media (max-width: 919px) {
+    .currency__subtitle {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .currency__block {
+        gap: 20px;
+    }
+
+    .currency__list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .list__item_name,
+    .list__item_value {
+        font-size: 18px;
+    }
+
+    .currency__link {
+        font-size: 18px;
+        margin-top: 28px;
+    }
+}
+
+@media (max-width: 599px) {
+    .currency__subtitle {
+        margin: 5px auto 0 auto;
+    }
+
+    .currency__list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .currency__block {
+        justify-content: space-evenly;
+    }
+
+    .currency__link {
+        margin: 25px auto 0 auto;
+    }
+}
+
+@media (max-width: 499px) {
+    .currency__subtitle {
+        font-size: 16px;
+        margin-top: 16px;
+    }
+
+    .currency__list_item {
+        gap: 12px;
+    }
+
+    .list__item_name,
+    .list__item_value {
+        font-size: 16px;
+    }
+
+    .currency__link {
+        font-size: 16px;
+        margin-top: 24px;
+    }
+}

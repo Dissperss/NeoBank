@@ -24,3 +24,36 @@
     display: block;
     margin: 50px auto 0 auto;
 }
+
+@media (max-width: 919px) {
+    .map__section {
+        padding-top: 40px;
+    }
+
+    .map__title {
+        font-size: 24px;
+    }
+
+    .map__subtitle {
+        font-size: 14px;
+    }
+
+    .map__img {
+        margin-top: 36px;
+    }
+}
+
+@media (max-width: 499px) {
+    .map__title {
+        font-size: 20px;
+        line-height: 140%;
+    }
+
+    .map__subtitle {
+        font-size: 13px;
+    }
+
+    .map__img {
+        margin-top: 28px;
+    }
+}

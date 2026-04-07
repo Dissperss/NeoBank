@@ -70,3 +70,56 @@
     letter-spacing: 0.02em;
     color: #2d3748;
 }
+
+@media (max-width: 1299px) {
+    .footer__contacts_tel {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 919px) {
+    .footer {
+        padding: 60px 0;
+    }
+
+    .footer__header {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .footer__contacts_tel {
+        font-size: 24px;
+    }
+
+    .footer__inner {
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 499px) {
+    .footer {
+        padding: 48px 0;
+    }
+
+    .footer__contacts_tel {
+        font-size: 20px;
+    }
+
+    .footer__contacts_email {
+        font-size: 14px;
+    }
+
+    .footer__menu_list {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .footer__menu_item {
+        font-size: 14px;
+    }
+
+    .footer__policy {
+        font-size: 13px;
+        margin-top: 24px;
+    }
+}

@@ -11,3 +11,19 @@
     background: #003cff;
     cursor: pointer;
 }
+
+@media (max-width: 919px) {
+    .btn {
+        padding: 14px;
+        font-size: 15px;
+        border-radius: 14px;
+    }
+}
+
+@media (max-width: 499px) {
+    .btn {
+        padding: 12px;
+        font-size: 14px;
+        border-radius: 12px;
+    }
+}

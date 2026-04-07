@@ -26,3 +26,25 @@
 .subscribe__form_input:focus {
     border-bottom: 1px solid #686df1;
 }
+
+@media (max-width: 599px) {
+    .subscribe__form_label {
+        width: 100%;
+    }
+
+    .subscribe__form_input {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 499px) {
+    .subscribe__form_input {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .subscribe__form_input::placeholder {
+        font-size: 14px;
+    }
+}
