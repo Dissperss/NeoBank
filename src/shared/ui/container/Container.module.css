@@ -1,0 +1,17 @@
+.container {
+    padding: 0 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.sm {
+    max-width: 780px;
+}
+
+.md {
+    max-width: 1100px;
+}
+
+.lg {
+    max-width: 1340px;
+}
