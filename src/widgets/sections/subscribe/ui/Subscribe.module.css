@@ -1,0 +1,33 @@
+.subscribe__section {
+    padding: 65px 0 100px 0;
+}
+
+.subscribe__support {
+    display: block;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 147%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #eb801d;
+}
+
+.subscribe__title {
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #1c1c1e;
+}
+
+.subscribe__subtitle {
+    margin-top: 25px;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 147%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #1c1c1e;
+}

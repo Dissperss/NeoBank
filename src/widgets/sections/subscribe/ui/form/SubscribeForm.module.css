@@ -1,0 +1,13 @@
+.subscribe__form {
+    max-width: 525px;
+    width: 100%;
+    margin: 60px auto 0 auto;
+    padding: 22px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px 0 rgba(54, 58, 120, 0.1);
+    background: #fff;
+}
