@@ -1,0 +1,13 @@
+.features__list_item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.list__item_text {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 214%;
+    color: #4f5665;
+}
