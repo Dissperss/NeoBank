@@ -1,4 +1,5 @@
 import EmailIcon from '@/shared/assets/icons/subscribe/email.svg?react'
+
 import styles from './SubscribeInput.module.css'
 
 export const SubscribeInput = () => {

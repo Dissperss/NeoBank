@@ -1,22 +1,13 @@
-import axios from 'axios'
-import {
-    CURRENCY_API_BASE_URL,
-    CURRENCY_API_TIMEOUT,
-} from '@/shared/config/currency'
-import { type ConversionRates } from '../types/currency'
+import { currencyClient } from './instance'
+import { type ConversionRates } from '../../widgets/sections/exchangeRates/types/currency'
 
 interface ApiResponse {
     conversion_rates: ConversionRates
 }
 
-const api = axios.create({
-    baseURL: CURRENCY_API_BASE_URL,
-    timeout: CURRENCY_API_TIMEOUT,
-})
-
 export const getCurrency = async (): Promise<ConversionRates> => {
     try {
-        const { data } = await api.get<ApiResponse>('/RUB')
+        const { data } = await currencyClient.get<ApiResponse>('/RUB')
         if (!data.conversion_rates) {
             throw new Error('Invalid response: missing conversion_rates')
         }

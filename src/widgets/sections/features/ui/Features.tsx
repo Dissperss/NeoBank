@@ -1,10 +1,11 @@
+import laptopMan from '@/shared/assets/images/features/manWithNotebook.png'
 import { Container } from '@/shared/ui/container'
 import { Section } from '@/shared/ui/section'
-import { featureList } from '../constants/featureList'
-import laptopMan from '@/shared/assets/images/features/manWithNotebook.png'
 
-import styles from './Features.module.css'
 import { FeatureListItem } from './featureListItem'
+import styles from './Features.module.css'
+import { featureList } from '../constants/featureList'
+
 
 export const Features = () => {
     return (

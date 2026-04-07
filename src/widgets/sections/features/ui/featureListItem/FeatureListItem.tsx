@@ -1,6 +1,7 @@
-import { type FeatureList } from '../../constants/featureList'
 import CheckIcon from '@/shared/assets/icons/checkIcon.svg?react'
+
 import styles from './FeatureListItem.module.css'
+import { type FeatureList } from '../../constants/featureList'
 
 interface FeatureListItemProps {
     item: FeatureList

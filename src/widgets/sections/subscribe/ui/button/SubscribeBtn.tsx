@@ -1,4 +1,5 @@
 import SendIcon from '@/shared/assets/icons/subscribe/send.svg?react'
+
 import styles from './SubscribeBtn.module.css'
 
 export const SubscribeBtn = () => {

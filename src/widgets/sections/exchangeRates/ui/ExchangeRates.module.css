@@ -1,0 +1,38 @@
+.currency__section {
+    padding-top: 50px;
+}
+
+.currency__wrapper {
+    margin: 0 auto;
+    padding: 32px;
+    background: linear-gradient(to bottom, #ffffff, #b0b5ba);
+    box-shadow:
+        0 2px 4px 0 rgba(0, 0, 0, 0.05),
+        0 0 4px 0 rgba(0, 0, 0, 0.05);
+
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.currency__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.currency__header_title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 250%;
+    color: #000;
+}
+
+.currency__header_update {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 313%;
+    color: #000;
+}

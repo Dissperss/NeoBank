@@ -1,7 +1,7 @@
-import { Section } from '@/shared/ui/section'
 import { Container } from '@/shared/ui/container'
-import { SubscribeForm } from './form/SubscribeForm'
+import { Section } from '@/shared/ui/section'
 
+import { SubscribeForm } from './form/SubscribeForm'
 import styles from './Subscribe.module.css'
 
 export const Subscribe = () => {
