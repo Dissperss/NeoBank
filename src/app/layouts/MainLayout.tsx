@@ -1,17 +1,20 @@
 import { Outlet } from 'react-router-dom'
-// import { Footer } from '@/components/layout/Footer/Footer'
-// import { Header } from '@/components/layout/Header/Header'
+
+import { Footer } from '@/widgets/footer'
+import { Header } from '@/widgets/header'
+
+import styles from './MainLayout.module.css'
 
 export const MainLayout = () => {
     return (
         <>
-            {/* <Header /> */}
+            <Header />
 
-            <main className="container">
+            <main className={styles.content}>
                 <Outlet />
             </main>
 
-            {/* <Footer /> */}
+            <Footer />
         </>
     )
 }
