@@ -4,4 +4,5 @@ export {
     NEWS_CATEGORY,
     NEWS_PAGE_SIZE,
     NEWS_COUNTRY,
+    NEWS_UPDATE_INTERVAL,
 } from './news'

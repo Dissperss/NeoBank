@@ -4,13 +4,7 @@ import {
     NEWS_PAGE_SIZE,
 } from '@/shared/config/news'
 import { newsClient } from './instance'
-
-type Article = {
-    title: string
-    url: string
-    urlToImage?: string | null
-    description?: string | null
-}
+import type { Article } from '@/widgets/sections/news/types/news'
 
 interface ApiResponse {
     articles: Article[]
@@ -30,7 +24,7 @@ export const getNews = async (): Promise<Article[]> => {
         if (!data.articles || !Array.isArray(data.articles)) {
             throw new Error('Invalid response: missing articles')
         }
-
+        console.log(data.articles)
         return data.articles
     } catch (error) {
         console.error(error)

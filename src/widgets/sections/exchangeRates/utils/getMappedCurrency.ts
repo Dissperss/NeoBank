@@ -15,7 +15,7 @@ export const getMappedCurrency = (
         if (rate && typeof rate === 'number' && rate > 0) {
             const countedRate = Number(
                 (BASED_CURRENCY_AMOUNT / rate).toFixed(2),
-            ) // Единицу меняем на BASE_CURRENCY_AMOUNT (константа)
+            )
             filtered.push({ code: currency, rate: countedRate })
         }
     }
