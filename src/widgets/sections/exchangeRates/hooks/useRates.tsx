@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 
+import { UPDATE_INTERVAL } from '@/shared/config/currency'
 import { getCurrency } from '@/shared/api/currency'
-import { UPDATE_INTERVAL } from '@/shared/config'
+import { getMappedCurrency } from '../utils/getMappedCurrency'
 
 import { type DisplayRate } from '../types/currency'
-import { getMappedCurrency } from '../utils/getMappedCurrency'
 
 export const useRates = () => {
     const [rates, setRates] = useState<DisplayRate[] | null>(null)
