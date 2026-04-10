@@ -1,0 +1,26 @@
+.news__section {
+    padding-top: 50px;
+}
+
+.news__title {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 167%;
+    text-align: center;
+    color: #000;
+}
+
+.news__subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 313%;
+    text-align: center;
+    color: #2d3748;
+}
+
+.news__block {
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}

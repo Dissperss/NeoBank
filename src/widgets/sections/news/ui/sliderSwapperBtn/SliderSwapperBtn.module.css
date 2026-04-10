@@ -1,0 +1,14 @@
+.slider__swapper_btn {
+    border-radius: 100%;
+    border: none;
+    padding: 20px;
+}
+
+.slider__swapper_btn:hover {
+    transform: scale(1.1);
+}
+
+.slider__swapper_btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}

@@ -1,0 +1,14 @@
+.slider__swapper_wrapper {
+    display: flex;
+    gap: 20px;
+    margin-left: auto;
+}
+
+.swapper__btn_left {
+    background: #fff;
+    border: 1px solid #003cff;
+}
+
+.swapper__btn_right {
+    background-color: #003cff;
+}

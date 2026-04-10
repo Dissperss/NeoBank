@@ -1,0 +1,11 @@
+.slider__img_placeholder {
+    width: 250px;
+    height: 120px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 8px;
+}
