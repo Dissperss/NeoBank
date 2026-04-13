@@ -1,12 +1,16 @@
 import { Section } from '@/shared/ui/section'
 import { useNews } from '../hooks/useNews'
 import { Container } from '@/shared/ui/container'
-import styles from './News.module.css'
 import { Slider } from './slider/Slider'
 import { SliderSwapper } from './sliderSwapper'
+import styles from './News.module.css'
+import { useSlider } from '../hooks'
 
 export const News = () => {
     const { news, isLoading, errorText, fetchNews } = useNews()
+    const { currentIndex, maxIndex, handleNext, handlePrev } = useSlider(
+        news?.length ?? 0,
+    )
 
     return (
         <Section className={styles.news__section}>
@@ -24,8 +28,14 @@ export const News = () => {
                         isLoading={isLoading}
                         errorText={errorText}
                         fetchNews={fetchNews}
+                        currentIndex={currentIndex}
                     />
-                    <SliderSwapper />
+                    <SliderSwapper
+                        currentIndex={currentIndex}
+                        maxIndex={maxIndex}
+                        handleNext={handleNext}
+                        handlePrev={handlePrev}
+                    />
                 </div>
             </Container>
         </Section>

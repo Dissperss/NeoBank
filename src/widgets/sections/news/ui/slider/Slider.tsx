@@ -10,6 +10,7 @@ interface SliderProps {
     isLoading: boolean
     errorText: string | null
     fetchNews: () => Promise<void>
+    currentIndex: number
 }
 
 export const Slider = ({
@@ -17,6 +18,7 @@ export const Slider = ({
     isLoading,
     errorText,
     fetchNews,
+    currentIndex,
 }: SliderProps) => {
     if (isLoading) {
         return <Loader />
@@ -26,9 +28,15 @@ export const Slider = ({
         return <ErrorMessage onRetry={fetchNews} />
     }
 
+    const offset = currentIndex * (320 + 80)
+
     return (
         <div className={styles.slider__viewport}>
-            <ul className={styles.slider__wrapper} role="list">
+            <ul
+                className={styles.slider__wrapper}
+                role="list"
+                style={{ transform: `translateX(-${offset}px)` }}
+            >
                 {news?.map((item) => (
                     <li
                         key={item.url}
@@ -40,9 +48,14 @@ export const Slider = ({
                             alt="news_img"
                             className={styles.slider__slide_img}
                         />
-                        <p className={styles.slider__slide_title}>
+                        <a
+                            className={styles.slider__slide_link}
+                            href={item.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             {item.title}
-                        </p>
+                        </a>
                         <p className={styles.slider__slide_text}>
                             {item.description ? item.description : ''}
                         </p>

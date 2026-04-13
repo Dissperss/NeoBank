@@ -24,7 +24,6 @@ export const getNews = async (): Promise<Article[]> => {
         if (!data.articles || !Array.isArray(data.articles)) {
             throw new Error('Invalid response: missing articles')
         }
-        console.log(data.articles)
         return data.articles
     } catch (error) {
         console.error(error)

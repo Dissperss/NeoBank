@@ -12,3 +12,15 @@
 .swapper__btn_right {
     background-color: #003cff;
 }
+
+@media (max-width: 599px) {
+    .slider__swapper_wrapper {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 499px) {
+    .slider__swapper_wrapper {
+        gap: 12px;
+    }
+}
