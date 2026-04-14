@@ -8,6 +8,8 @@
     flex-wrap: nowrap;
     align-items: center;
     gap: 80px;
+    padding: 1px;
+    transition: transform 0.3s ease;
 }
 
 .slider__slide {
@@ -35,13 +37,19 @@
 }
 
 .slider__slide_link {
-    display: block;
+    max-height: calc(1.25 * 1em * 5);
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    overflow: hidden;
     flex: 1;
     font-weight: 500;
     font-size: 20px;
     line-height: 125%;
     text-align: center;
     color: #000;
+    text-decoration: none;
 }
 
 .slider__slide_text {

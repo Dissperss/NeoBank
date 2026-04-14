@@ -4,18 +4,30 @@
     padding: 20px;
 }
 
+.slider__swapper_btn svg {
+    width: 25px;
+    height: 25px;
+    display: block;
+    color: white;
+}
+
 .slider__swapper_btn:hover {
     transform: scale(1.1);
 }
 
 .slider__swapper_btn:disabled {
     background: #ccc;
+    border: 1px solid #003cff;
     cursor: not-allowed;
     opacity: 0.5;
 }
 
 .slider__swapper_btn:disabled:hover {
     transform: none;
+}
+
+.slider__swapper_btn:disabled svg {
+    color: black;
 }
 
 @media (max-width: 919px) {

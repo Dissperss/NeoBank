@@ -5,7 +5,7 @@ import { getMappedNews } from '../utils/getMappedNews'
 import { NEWS_UPDATE_INTERVAL } from '@/shared/config/news'
 
 export const useNews = () => {
-    const [news, setNews] = useState<Article[] | null>(null)
+    const [news, setNews] = useState<Article[]>([])
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [errorText, setErrorText] = useState<string | null>(null)
 
@@ -25,7 +25,7 @@ export const useNews = () => {
             setNews(filtered)
         } catch (error) {
             setErrorText('Не удалось загрузить новости')
-            setNews(null)
+            setNews([])
         } finally {
             setIsLoading(false)
         }

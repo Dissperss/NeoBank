@@ -30,12 +30,14 @@ export const News = () => {
                         fetchNews={fetchNews}
                         currentIndex={currentIndex}
                     />
-                    <SliderSwapper
-                        currentIndex={currentIndex}
-                        maxIndex={maxIndex}
-                        handleNext={handleNext}
-                        handlePrev={handlePrev}
-                    />
+                    {!errorText && !isLoading && news && news.length > 0 && (
+                        <SliderSwapper
+                            currentIndex={currentIndex}
+                            maxIndex={maxIndex}
+                            handleNext={handleNext}
+                            handlePrev={handlePrev}
+                        />
+                    )}
                 </div>
             </Container>
         </Section>

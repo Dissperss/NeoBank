@@ -4,9 +4,11 @@ import { ErrorMessage } from '@/shared/ui/errorMessage'
 import type { Article } from '../../types/news'
 import styles from './Slider.module.css'
 import { SliderImg } from '../sliderImg'
+import { useRef } from 'react'
+import { useSliderDimensions } from '../../hooks'
 
 interface SliderProps {
-    news: Article[] | null
+    news: Article[]
     isLoading: boolean
     errorText: string | null
     fetchNews: () => Promise<void>
@@ -28,7 +30,15 @@ export const Slider = ({
         return <ErrorMessage onRetry={fetchNews} />
     }
 
-    const offset = currentIndex * (320 + 80)
+    const firstSlideRef = useRef<HTMLLIElement>(null)
+    const ulRef = useRef<HTMLUListElement>(null)
+
+    const { cardWidth, gap } = useSliderDimensions(
+        ulRef as React.RefObject<HTMLElement>,
+        firstSlideRef as React.RefObject<HTMLElement>,
+    )
+
+    const offset = cardWidth && gap ? currentIndex * (cardWidth + gap) : 0
 
     return (
         <div className={styles.slider__viewport}>
@@ -36,16 +46,18 @@ export const Slider = ({
                 className={styles.slider__wrapper}
                 role="list"
                 style={{ transform: `translateX(-${offset}px)` }}
+                ref={ulRef}
             >
-                {news?.map((item) => (
+                {news.map((item, index) => (
                     <li
                         key={item.url}
                         className={styles.slider__slide}
                         role="listitem"
+                        ref={index === 0 ? firstSlideRef : null}
                     >
                         <SliderImg
                             src={item.urlToImage}
-                            alt="news_img"
+                            alt="News img"
                             className={styles.slider__slide_img}
                         />
                         <a
