@@ -8,6 +8,8 @@ Modern banking application built with React, TypeScript, and Vite.
 - **Build Tool**: Vite
 - **Routing**: React Router DOM
 - **HTTP Client**: Axios
+- **Styling**: CSS Modules
+- **SVG**: vite-plugin-svgr (React components)
 - **Architecture**: Feature-Sliced Design
 
 ## Getting Started
@@ -35,8 +37,21 @@ src/
 ├── features/      # User actions
 ├── pages/         # Route pages
 ├── widgets/       # Composite UI blocks
+│   └── sections/  # Page sections (hero, features, news, etc.)
 └── shared/        # Shared utilities, UI components, API
 ```
+
+## Sections
+
+| Section | Description |
+|---------|-------------|
+| Hero | Main landing banner |
+| Features | Banking features showcase |
+| Exchange Rates | Currency rates widget |
+| News | Financial news feed with scrollable slider |
+| Subscribe | Email subscription form |
+| Map | Office locations |
+| Header/Footer | Navigation and footer |
 
 ## Scripts
 
@@ -47,3 +62,17 @@ src/
 | `npm run lint` | Run ESLint |
 | `npm run lint:fix` | Fix ESLint errors |
 | `npm run format` | Format with Prettier |
+
+## Environment Variables
+
+```env
+VITE_NEWS_API_KEY=your_news_api_key
+```
+
+## API Configuration
+
+The project uses external APIs:
+- **News**: NewsAPI (https://newsapi.org)
+- **Currency**: ExchangeRate-API (https://v6.exchangerate-api.com)
+
+News data is refreshed every 15 minutes automatically.
