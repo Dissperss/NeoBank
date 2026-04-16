@@ -1,5 +1,5 @@
 import { currencyClient } from './instance'
-import { type ConversionRates } from '../../widgets/sections/exchangeRates/types/currency'
+import { type ConversionRates } from '@/widgets/sections/exchangeRates/types/currency'
 
 interface ApiResponse {
     conversion_rates: ConversionRates

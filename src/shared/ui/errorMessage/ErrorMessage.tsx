@@ -9,7 +9,9 @@ export const ErrorMessage = ({ onRetry }: ErrorMessageProps) => {
     return (
         <>
             <p className={styles.error__text}>Error loading data</p>
-            <Button onClick={onRetry}>Repeat</Button>
+            <Button className={styles.error__btn} onClick={onRetry}>
+                Repeat
+            </Button>
         </>
     )
 }

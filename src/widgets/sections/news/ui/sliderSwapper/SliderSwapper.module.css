@@ -1,0 +1,25 @@
+.slider__swapper_wrapper {
+    display: flex;
+    gap: 20px;
+    margin-left: auto;
+}
+
+.swapper__btn_left {
+    background: #003cff;
+}
+
+.swapper__btn_right {
+    background-color: #003cff;
+}
+
+@media (max-width: 599px) {
+    .slider__swapper_wrapper {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 499px) {
+    .slider__swapper_wrapper {
+        gap: 12px;
+    }
+}
