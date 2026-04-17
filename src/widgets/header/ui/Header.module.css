@@ -29,6 +29,11 @@
     color: #1d1929;
 }
 
+.header__menu_link:hover {
+    color: #b2a35f;
+    transition: 0.3s all;
+}
+
 @media (max-width: 919px) {
     .header__title {
         font-size: 20px;
