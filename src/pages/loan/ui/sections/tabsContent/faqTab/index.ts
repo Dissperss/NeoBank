@@ -1,0 +1,1 @@
+export { Faqtab } from './Faqtab'
