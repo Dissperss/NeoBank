@@ -3,8 +3,17 @@ import PercentIcon from '@/shared/assets/icons/loanPage/aboutCardTabContent/perc
 import DeliveryIcon from '@/shared/assets/icons/loanPage/aboutCardTabContent/delivery.svg?react'
 import InstallmentIcon from '@/shared/assets/icons/loanPage/aboutCardTabContent/installment.svg?react'
 import AtmIcon from '@/shared/assets/icons/loanPage/aboutCardTabContent/atm.svg?react'
+import type { ReactElement } from 'react'
 
-export const aboutCardTabContent = [
+interface aboutCard {
+    title: string
+    descr: string
+    isAccent: boolean
+    id: string
+    icon: ReactElement
+}
+
+export const aboutCardTabContent: aboutCard[] = [
     {
         title: 'Up to 50 000 ₽',
         descr: 'Cash and transfers without commission and percent',

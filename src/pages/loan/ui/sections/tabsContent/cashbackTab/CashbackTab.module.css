@@ -1,0 +1,50 @@
+.cashback__section {
+    padding-top: 40px;
+}
+
+.cashback__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.cashback__list_item {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    border-radius: 28px;
+}
+
+.list__item_title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 147%;
+    color: rgba(67, 67, 67, 0.9);
+}
+
+.list__item_percent {
+    margin-top: 22px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 147%;
+    color: #000;
+}
+
+.cashback__list_item:nth-child(4) .list__item_percent {
+    margin-top: 0;
+}
+
+.background__default {
+    box-shadow:
+        0 2px 4px 0 rgba(0, 0, 0, 0.2),
+        0 0 8px 0 rgba(0, 0, 0, 0.08);
+    background: #eaecee;
+}
+
+.background__accent {
+    box-shadow:
+        0 2px 4px 0 rgba(0, 0, 0, 0.2),
+        0 0 8px 0 rgba(0, 0, 0, 0.08);
+    background: rgba(136, 179, 184, 0.6);
+}
