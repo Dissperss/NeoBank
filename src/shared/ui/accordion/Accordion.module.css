@@ -37,8 +37,9 @@
 }
 
 .item__btn_icon {
-    transition: transform 0.2s ease;
+    transform: rotate(180deg);
 }
 .item__btn_icon_expanded {
-    transform: rotate(180deg);
+    transition: transform 0.2s ease;
+    transform: rotate(360deg);
 }

@@ -3,6 +3,7 @@ import { CardPromo } from './sections/cardPromo'
 import { tabs } from '../lib/tabsConfig'
 import { Tabs } from '@/shared/ui/tabs/ui'
 import { Container } from '@/shared/ui/container'
+import { CardInstruction } from './sections/cardInstruction/ui'
 
 export const LoanPage = () => {
     const [activeTab, setActiveTab] = useState(0)
@@ -11,6 +12,7 @@ export const LoanPage = () => {
         <Container>
             <CardPromo />
             <Tabs tabs={tabs} activeIndex={activeTab} onChange={setActiveTab} />
+            <CardInstruction />
         </Container>
     )
 }

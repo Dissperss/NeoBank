@@ -1,0 +1,32 @@
+.instruction__block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 375px;
+}
+
+.instruction__block_header {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.block__header_step {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 147%;
+    text-align: center;
+    color: #000;
+    background: #d9d9d9;
+    border-radius: 50px;
+    padding: 8px 16px;
+}
+
+.instruction__block_text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 147%;
+    text-align: center;
+    color: #000;
+    word-break: break-word;
+}

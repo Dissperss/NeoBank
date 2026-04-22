@@ -1,0 +1,7 @@
+.divider {
+    display: inline-block;
+    max-width: 300px;
+    width: 100%;
+    height: 2px;
+    background: rgba(128, 128, 128, 0.2);
+}

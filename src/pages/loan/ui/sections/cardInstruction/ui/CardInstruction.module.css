@@ -1,0 +1,19 @@
+.card__instruction_section {
+    padding-top: 90px;
+}
+
+.card__instruction_title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 147%;
+    text-align: center;
+    color: #000;
+}
+
+.card__instruction_wrapper {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+    align-items: center;
+}
