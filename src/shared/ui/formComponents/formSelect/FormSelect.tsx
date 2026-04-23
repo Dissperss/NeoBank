@@ -1,3 +1,4 @@
+import styles from './FormSelect.module.css'
 import type { UseFormRegisterReturn } from 'react-hook-form'
 
 type FormSelectProps = {
@@ -13,7 +14,7 @@ type FormSelectProps = {
 
 export const FormSelect = ({ registration, id, options }: FormSelectProps) => {
     return (
-        <select {...registration} id={id}>
+        <select className={styles.form__select} {...registration} id={id}>
             {options?.map((opt) => (
                 <option key={opt.value} value={opt.value}>
                     {opt.label}

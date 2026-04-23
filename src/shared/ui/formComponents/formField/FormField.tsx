@@ -1,4 +1,3 @@
-import type { UseFormRegisterReturn } from 'react-hook-form'
 import { FormLabel } from '../formLabel'
 import styles from './FormField.module.css'
 

@@ -36,9 +36,18 @@ ul,
 p,
 dd,
 dt,
-dl {
+dl,
+input {
     margin: 0;
     padding: 0;
+}
+
+input[type='range'] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
 }
 
 a {

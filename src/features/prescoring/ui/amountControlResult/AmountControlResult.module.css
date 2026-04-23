@@ -1,0 +1,44 @@
+.amount__res {
+    padding-left: 42px;
+}
+
+.amount__res_title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    color: #000;
+}
+
+.amount__res_block {
+    position: relative;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.amount__res_block::after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    width: 200px;
+    height: 1px;
+    background: rgba(128, 128, 128, 0.2);
+}
+
+.res__block_value {
+    border: none;
+    outline: none;
+    background: transparent;
+    font: inherit;
+}
+
+.res__block_value,
+.res__block_currency {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: #000;
+}

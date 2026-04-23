@@ -7,4 +7,5 @@ export interface FormData {
     birthday: string
     passportSeries: string
     passportNumber: string
+    amount?: number
 }

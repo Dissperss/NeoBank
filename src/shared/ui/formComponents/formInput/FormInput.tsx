@@ -2,6 +2,7 @@ import ErrorIcon from '@/shared/assets/icons/loanPage/form/error_input_icon.svg?
 import SuccesIcon from '@/shared/assets/icons/loanPage/form/success_input_icon.svg?react'
 import styles from './FormInput.module.css'
 import type { UseFormRegisterReturn } from 'react-hook-form'
+import type { InputHTMLAttributes } from 'react'
 
 type FormInputProps = {
     registration: UseFormRegisterReturn
@@ -10,7 +11,8 @@ type FormInputProps = {
     renderIcon?: boolean | null
     type?: string
     id?: string
-}
+    placeholder?: string
+} & InputHTMLAttributes<HTMLInputElement>
 
 export const FormInput = ({
     registration,
@@ -19,19 +21,34 @@ export const FormInput = ({
     renderIcon,
     id,
     type,
+    placeholder,
+    ...props
 }: FormInputProps) => {
     return (
         <div className={styles.input__wrapper}>
             <input
                 {...registration}
-                name={registration.name}
-                onChange={registration.onChange}
-                onBlur={registration.onBlur}
-                ref={registration.ref}
+                {...props}
+                onBlur={(e) => {
+                    registration.onBlur(e)
+                    props.onBlur?.(e)
+                }}
+                onChange={(e) => {
+                    registration.onChange(e)
+                    props.onChange?.(e)
+                }}
+                className={styles.form__input}
                 id={id}
                 type={type}
+                placeholder={placeholder}
             />
-            {renderIcon && touched && (error ? <ErrorIcon /> : <SuccesIcon />)}
+            {renderIcon &&
+                touched &&
+                (error ? (
+                    <ErrorIcon className={styles.input__error_icon} />
+                ) : (
+                    <SuccesIcon className={styles.input__success_icon} />
+                ))}
         </div>
     )
 }
