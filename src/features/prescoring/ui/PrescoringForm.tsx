@@ -3,12 +3,10 @@ import { AmountControl } from './amountControl'
 import styles from './PrescoringForm.module.css'
 import { FormWrapper } from '@/shared/ui/form/FormWrapper'
 import { FormField } from '@/shared/ui/formComponents/formField'
-
-interface FormData {
-    lastName: string
-    firstName: string
-    email: string
-}
+import { FormInput } from '@/shared/ui/formComponents/formInput'
+import { fieldsConfig } from '../config/fieldsConfig'
+import { FormSelect } from '@/shared/ui/formComponents/formSelect'
+import type { FormData } from '../types/formData'
 
 export const PrescoringForm = () => {
     const {
@@ -32,15 +30,44 @@ export const PrescoringForm = () => {
             <h3 className={styles.contact__info_title}>Contact Information</h3>
             <form action="" onSubmit={handleSubmit(onSubmit)}>
                 <AmountControl />
-                <FormField
-                    label="Your last name"
-                    htmlFor="lastName"
-                    error={errors.lastName?.message}
-                    touched={touchedFields.lastName}
-                    id="lastName"
-                    registration={register('lastName')}
-                    renderIcon
-                />
+                {fieldsConfig.map((field) => (
+                    <FormField
+                        key={field.name}
+                        label={field.label}
+                        htmlFor={field.name}
+                        error={errors[field.name]?.message}
+                    >
+                        {field.type === 'input' && (
+                            <FormInput
+                                registration={register(field.name)}
+                                id={field.name}
+                                touched={touchedFields[field.name]}
+                                error={errors[field.name]?.message}
+                                renderIcon={field.renderIcon}
+                            />
+                        )}
+                        {field.type === 'select' && (
+                            <FormSelect
+                                registration={register(field.name, {
+                                    required: field.required,
+                                })}
+                                id={field.name}
+                                options={field.options}
+                                touched={touchedFields[field.name]}
+                                error={errors[field.name]?.message}
+                            />
+                        )}
+                        {field.type === 'date' && (
+                            <FormInput
+                                type="date"
+                                registration={register(field.name)}
+                                touched={touchedFields[field.name]}
+                                error={errors[field.name]?.message}
+                                renderIcon={field.renderIcon}
+                            />
+                        )}
+                    </FormField>
+                ))}
             </form>
         </FormWrapper>
     )

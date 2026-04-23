@@ -18,6 +18,7 @@ export const FormInput = ({
     touched,
     renderIcon,
     id,
+    type,
 }: FormInputProps) => {
     return (
         <div className={styles.input__wrapper}>
@@ -28,6 +29,7 @@ export const FormInput = ({
                 onBlur={registration.onBlur}
                 ref={registration.ref}
                 id={id}
+                type={type}
             />
             {renderIcon && touched && (error ? <ErrorIcon /> : <SuccesIcon />)}
         </div>
