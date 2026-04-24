@@ -5,10 +5,13 @@ import { FormField } from '@/shared/ui/formComponents/formField'
 import { FormInput } from '@/shared/ui/formComponents/formInput'
 import { fieldsConfig } from '../config/fieldsConfig'
 import { FormSelect } from '@/shared/ui/formComponents/formSelect'
-import type { FormData } from '../types/formData'
+
 import styles from './PrescoringForm.module.css'
 import { AmountControlResult } from './amountControlResult'
 import { Button } from '@/shared/ui/button'
+import { validationShema } from '../model/validationShema'
+import { zodResolver } from '@hookform/resolvers/zod'
+import type { FormData } from '../types/formData'
 
 export const PrescoringForm = () => {
     const {
@@ -22,6 +25,7 @@ export const PrescoringForm = () => {
         defaultValues: {
             amount: 150000,
         },
+        resolver: zodResolver(validationShema),
     })
 
     const onSubmit = (data: FormData) => {
