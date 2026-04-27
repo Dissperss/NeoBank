@@ -12,6 +12,7 @@ type FormInputProps = {
     type?: string
     id?: string
     placeholder?: string
+    submitted: boolean
 } & InputHTMLAttributes<HTMLInputElement>
 
 export const FormInput = ({
@@ -22,8 +23,11 @@ export const FormInput = ({
     id,
     type,
     placeholder,
+    submitted,
     ...props
 }: FormInputProps) => {
+    const hasError = !!error && (touched || submitted)
+
     return (
         <div className={styles.input__wrapper}>
             <input
@@ -37,7 +41,7 @@ export const FormInput = ({
                     registration.onChange(e)
                     props.onChange?.(e)
                 }}
-                className={styles.form__input}
+                className={`${styles.form__input} ${hasError ? styles.form__input_error : ''}`}
                 id={id}
                 type={type}
                 placeholder={placeholder}

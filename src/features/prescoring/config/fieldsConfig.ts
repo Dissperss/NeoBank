@@ -36,7 +36,7 @@ export const fieldsConfig: FieldsCfg[] = [
         type: 'input',
         required: false,
         placeholder: 'For Example Victorovich',
-        renderIcon: false,
+        renderIcon: true,
     },
     {
         name: 'term',

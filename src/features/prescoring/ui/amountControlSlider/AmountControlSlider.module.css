@@ -85,3 +85,9 @@
     line-height: 100%;
     color: #786d6d;
 }
+
+.slider__error {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}

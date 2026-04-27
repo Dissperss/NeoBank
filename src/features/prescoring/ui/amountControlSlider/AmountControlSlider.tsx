@@ -67,7 +67,12 @@ export const AmountControlSlider = ({
                 </div>
             </div>
 
-            {touched && (error ? <span>Error</span> : '')}
+            {touched &&
+                (error ? (
+                    <span className={styles.slider__error}>Error</span>
+                ) : (
+                    ''
+                ))}
         </>
     )
 }

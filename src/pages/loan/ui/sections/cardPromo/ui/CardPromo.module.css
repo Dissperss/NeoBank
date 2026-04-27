@@ -52,6 +52,7 @@
 .block__conditions_item {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .conditions__item_title {
@@ -68,6 +69,22 @@
     line-height: 112%;
     letter-spacing: 0.02em;
     color: #3d3d3d;
+}
+
+.conditions__item_tooltip {
+    position: absolute;
+    width: 170px;
+    bottom: -50px;
+    left: -30px;
+    opacity: 0;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.block__conditions_item:hover .conditions__item_tooltip {
+    opacity: 1;
+    visibility: visible;
 }
 
 .card__promo_img {

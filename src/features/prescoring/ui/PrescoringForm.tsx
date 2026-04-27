@@ -12,6 +12,7 @@ import { Button } from '@/shared/ui/button'
 import { validationShema } from '../model/validationShema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import type { FormData } from '../types/formData'
+import { Loader } from '@/shared/ui/loader'
 
 export const PrescoringForm = () => {
     const {
@@ -23,7 +24,8 @@ export const PrescoringForm = () => {
     } = useForm<FormData>({
         mode: 'onBlur',
         defaultValues: {
-            amount: 150000,
+            amount: 15000,
+            term: 6,
         },
         resolver: zodResolver(validationShema),
     })
@@ -100,17 +102,20 @@ export const PrescoringForm = () => {
                                         error={errors[field.name]?.message}
                                         renderIcon={field.renderIcon}
                                         placeholder={field.placeholder}
+                                        submitted={isSubmitting}
                                     />
                                 )}
                                 {field.type === 'select' && (
                                     <FormSelect
                                         registration={register(field.name, {
                                             required: field.required,
+                                            valueAsNumber: true,
                                         })}
                                         id={field.name}
                                         options={field.options}
                                         touched={touchedFields[field.name]}
                                         error={errors[field.name]?.message}
+                                        submitted={isSubmitting}
                                     />
                                 )}
                                 {field.type === 'date' && (
@@ -121,6 +126,7 @@ export const PrescoringForm = () => {
                                         renderIcon={field.renderIcon}
                                         placeholder={field.placeholder}
                                         type="text"
+                                        submitted={isSubmitting}
                                         onFocus={(e) => {
                                             if (e.target.type !== 'date') {
                                                 e.target.type = 'date'
@@ -137,8 +143,12 @@ export const PrescoringForm = () => {
                         )
                     })}
                 </div>
-                <Button className={styles.contact__form_btn} type="submit">
-                    Continue
+                <Button
+                    className={styles.contact__form_btn}
+                    type="submit"
+                    disabled={isSubmitting}
+                >
+                    {isSubmitting ? <Loader /> : 'Continue'}
                 </Button>
             </form>
         </FormWrapper>

@@ -2,6 +2,8 @@ import platinum from '@/shared/assets/images/loanPage/platinumCard.png'
 import styles from './CardPromo.module.css'
 import { Section } from '@/shared/ui/section'
 import { Button } from '@/shared/ui/button'
+import { conditions } from '../constants/conditions'
+import { Tooltip } from '@/shared/ui/tooltip'
 
 export const CardPromo = () => {
     return (
@@ -17,30 +19,20 @@ export const CardPromo = () => {
                         commission and interest.
                     </p>
                     <div className={styles.promo__block_conditons}>
-                        <div className={styles.block__conditions_item}>
-                            <span className={styles.conditions__item_title}>
-                                Up to 160 days
-                            </span>
-                            <span className={styles.conditions__item_text}>
-                                No percent
-                            </span>
-                        </div>
-                        <div className={styles.block__conditions_item}>
-                            <span className={styles.conditions__item_title}>
-                                Up to 600 000 ₽
-                            </span>
-                            <span className={styles.conditions__item_text}>
-                                Credit limit
-                            </span>
-                        </div>
-                        <div className={styles.block__conditions_item}>
-                            <span className={styles.conditions__item_title}>
-                                0 ₽
-                            </span>
-                            <span className={styles.conditions__item_text}>
-                                Card service is free
-                            </span>
-                        </div>
+                        {conditions.map((item) => (
+                            <div className={styles.block__conditions_item}>
+                                <span className={styles.conditions__item_title}>
+                                    {item.title}
+                                </span>
+                                <span className={styles.conditions__item_text}>
+                                    {item.text}
+                                </span>
+                                <Tooltip
+                                    className={styles.conditions__item_tooltip}
+                                    text={item.tooltip}
+                                />
+                            </div>
+                        ))}
                     </div>
                     <Button onClick={() => console.log('Click!')}>
                         Apply for card
