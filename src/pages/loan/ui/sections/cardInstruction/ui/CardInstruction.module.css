@@ -17,3 +17,30 @@
     gap: 70px;
     align-items: center;
 }
+
+@media (max-width: 1299px) {
+    .card__instruction_wrapper {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 919px) {
+    .card__instruction_section {
+        padding-top: 60px;
+    }
+
+    .card__instruction_title {
+        font-size: 24px;
+    }
+
+    .card__instruction_wrapper {
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 599px) {
+    .card__instruction_title {
+        font-size: 20px;
+    }
+}

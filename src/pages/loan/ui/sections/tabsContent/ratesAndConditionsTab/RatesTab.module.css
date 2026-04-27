@@ -53,3 +53,40 @@
     letter-spacing: 0.02em;
     color: #434343;
 }
+
+@media (max-width: 919px) {
+    .rates__list_item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .rates__list_item:not(:last-child)::after {
+        bottom: -12px;
+    }
+
+    .list__item_title {
+        font-size: 14px;
+    }
+
+    .list__item_descr {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 599px) {
+    .rates__list {
+        gap: 32px;
+    }
+
+    .list__item_title {
+        font-size: 13px;
+    }
+
+    .list__item_descr {
+        font-size: 13px;
+    }
+
+    .list__item_descr_multiline {
+        font-size: 13px;
+    }
+}

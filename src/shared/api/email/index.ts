@@ -1,0 +1,1 @@
+export { subscribeEmail } from './email'

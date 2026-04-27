@@ -48,3 +48,39 @@
         0 0 8px 0 rgba(0, 0, 0, 0.08);
     background: rgba(136, 179, 184, 0.6);
 }
+
+@media (max-width: 1299px) {
+    .cashback__list {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 919px) {
+    .cashback__list {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .list__item_percent {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 599px) {
+    .cashback__list {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+    }
+
+    .list__item_title {
+        font-size: 14px;
+    }
+
+    .list__item_percent {
+        font-size: 24px;
+    }
+
+    .cashback__list_item {
+        padding: 24px;
+    }
+}

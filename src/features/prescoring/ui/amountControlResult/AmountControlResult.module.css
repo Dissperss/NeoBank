@@ -42,3 +42,24 @@
     line-height: 100%;
     color: #000;
 }
+
+@media (max-width: 919px) {
+    .amount__res {
+        padding-left: 0;
+        padding-top: 24px;
+        border-top: 1px dashed rgba(128, 128, 128, 0.4);
+    }
+
+    .amount__res_title {
+        font-size: 18px;
+    }
+
+    .amount__res_block::after {
+        width: 100%;
+    }
+
+    .res__block_value,
+    .res__block_currency {
+        font-size: 14px;
+    }
+}

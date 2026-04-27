@@ -20,7 +20,10 @@ export const CardPromo = () => {
                     </p>
                     <div className={styles.promo__block_conditons}>
                         {conditions.map((item) => (
-                            <div className={styles.block__conditions_item}>
+                            <div
+                                key={item.id}
+                                className={styles.block__conditions_item}
+                            >
                                 <span className={styles.conditions__item_title}>
                                     {item.title}
                                 </span>

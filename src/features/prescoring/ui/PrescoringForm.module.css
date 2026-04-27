@@ -60,3 +60,42 @@
     margin-left: auto;
     display: block;
 }
+
+@media (max-width: 1299px) {
+    .customize__card {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .customize__card_block {
+        padding-right: 0;
+        max-width: 100%;
+        border-right: none;
+        border-bottom: 1px dashed rgba(128, 128, 128, 0.4);
+        padding-bottom: 24px;
+    }
+}
+
+@media (max-width: 919px) {
+    .block__header_title {
+        font-size: 24px;
+    }
+
+    .block__header_step {
+        font-size: 14px;
+    }
+
+    .contact__form_inner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 599px) {
+    .block__header_title {
+        font-size: 20px;
+    }
+
+    .contact__form_inner {
+        grid-template-columns: 1fr;
+    }
+}

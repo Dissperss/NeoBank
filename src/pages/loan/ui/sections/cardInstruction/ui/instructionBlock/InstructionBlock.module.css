@@ -30,3 +30,31 @@
     color: #000;
     word-break: break-word;
 }
+
+@media (max-width: 1299px) {
+    .instruction__block {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 919px) {
+    .instruction__block {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .instruction__block_text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 599px) {
+    .block__header_step {
+        font-size: 16px;
+    }
+
+    .instruction__block_text {
+        font-size: 13px;
+        text-align: left;
+    }
+}
