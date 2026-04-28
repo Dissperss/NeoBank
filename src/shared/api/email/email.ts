@@ -6,7 +6,7 @@ interface ApiResponse {
 
 export const subscribeEmail = async (email: string): Promise<ApiResponse> => {
     try {
-        const { data } = await emailClient.post<ApiResponse>('/email', {
+        const { data } = await emailClient.post<ApiResponse>('', {
             email,
         })
 
