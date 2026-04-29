@@ -13,6 +13,7 @@ import { validationShema } from '../model/validationShema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import type { FormData } from '../types/formData'
 import { Loader } from '@/shared/ui/loader'
+import { sendCreditCardData } from '@/shared/api/form'
 
 export const PrescoringForm = () => {
     const {
@@ -30,14 +31,22 @@ export const PrescoringForm = () => {
         resolver: zodResolver(validationShema),
     })
 
-    const onSubmit = (data: FormData) => {
-        console.log(JSON.stringify(data))
-        reset()
+    const onSubmit = async (data: FormData) => {
+        try {
+            const response = await sendCreditCardData(data)
+            localStorage.setItem(
+                'loanApplicationId',
+                String(response.applicationId),
+            )
+            reset()
+        } catch (e) {
+            console.error(e)
+        }
     }
 
     return (
         <FormWrapper>
-            <div className={styles.customize__card}>
+            <div id="form" className={styles.customize__card}>
                 <div className={styles.customize__card_block}>
                     <div className={styles.card__block_header}>
                         <h3 className={styles.block__header_title}>
@@ -81,7 +90,6 @@ export const PrescoringForm = () => {
             <h3 className={styles.contact__info_title}>Contact Information</h3>
             <form
                 className={styles.contact__form}
-                action=""
                 onSubmit={handleSubmit(onSubmit)}
             >
                 <div className={styles.contact__form_inner}>

@@ -60,7 +60,7 @@ export const fieldsConfig: FieldsCfg[] = [
         renderIcon: true,
     },
     {
-        name: 'birthday',
+        name: 'birthdate',
         label: 'Your date of birth',
         type: 'date',
         required: true,

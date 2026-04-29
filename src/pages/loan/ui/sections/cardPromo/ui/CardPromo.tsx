@@ -37,9 +37,11 @@ export const CardPromo = () => {
                             </div>
                         ))}
                     </div>
-                    <Button onClick={() => console.log('Click!')}>
-                        Apply for card
-                    </Button>
+                    <a href="#form" className={styles.card__promo_link}>
+                        <Button onClick={() => console.log('Click!')}>
+                            Apply for card
+                        </Button>
+                    </a>
                 </div>
                 <img
                     className={styles.card__promo_img}

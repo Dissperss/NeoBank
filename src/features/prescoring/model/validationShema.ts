@@ -18,7 +18,7 @@ export const validationShema = z.object({
     patronymic: z.string().trim().optional().or(z.literal('')),
     term: z.union([z.literal(6), z.literal(12), z.literal(18), z.literal(24)]),
     email: z.email('Invalid email').trim(),
-    birthday: z.string().refine(
+    birthdate: z.string().refine(
         (date) => {
             const parsed = new Date(date)
             if (isNaN(parsed.getTime())) return false

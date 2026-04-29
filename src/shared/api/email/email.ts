@@ -1,4 +1,5 @@
-import { emailClient } from './instance'
+import { EMAIL_API_URL } from '@/shared/config/email'
+import { commonClient } from '../common/instance'
 
 interface ApiResponse {
     message: string
@@ -6,11 +7,11 @@ interface ApiResponse {
 
 export const subscribeEmail = async (email: string): Promise<void> => {
     try {
-        const data = await emailClient.post<ApiResponse>('', {
+        const data = await commonClient.post<ApiResponse>(EMAIL_API_URL, {
             email,
         })
 
-        if (data.status !== 200) {
+        if (data.status >= 200 && data.status < 3000) {
             throw new Error('Invalid response: missing data')
         }
     } catch (error) {

@@ -23,7 +23,9 @@ export const AmountControlResult = ({
                     type="text"
                     value={value}
                     onChange={(e) => {
-                        const val = e.target.value.replace(/\D/g, '')
+                        // Проверка на число
+                        const regExp = /\D/g
+                        const val = e.target.value.replace(regExp, '')
                         onChange(Number(val))
                     }}
                 />

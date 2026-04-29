@@ -48,7 +48,6 @@ export const Accordion = ({ items, allowMultiple }: AccordionProps) => {
                                     className={`${styles.item__btn_icon} ${isOpen ? styles.item__btn_icon_expanded : ''}`}
                                 />
                             </button>
-                            {/* Возможно имеет смысл вынетси button в отдельный компонент */}
                         </div>
                         {(allowMultiple
                             ? openBloks.includes(item.id)
