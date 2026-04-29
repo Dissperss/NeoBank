@@ -11,8 +11,8 @@ export const subscribeEmail = async (email: string): Promise<void> => {
             email,
         })
 
-        if (data.status >= 200 && data.status < 3000) {
-            throw new Error('Invalid response: missing data')
+        if (data.status < 200 || data.status >= 300) {
+            throw new Error('Invalid response status')
         }
     } catch (error) {
         console.error(error)
