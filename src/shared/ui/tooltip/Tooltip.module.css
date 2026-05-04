@@ -1,0 +1,13 @@
+.tooltip__wrapper {
+    background: #3d3d3d;
+    padding: 4px;
+    margin-top: 6px;
+}
+
+.tooltip {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    color: #fff;
+}

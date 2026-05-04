@@ -1,0 +1,46 @@
+.card__instruction_section {
+    padding-top: 90px;
+}
+
+.card__instruction_title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 147%;
+    text-align: center;
+    color: #000;
+}
+
+.card__instruction_wrapper {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+    align-items: center;
+}
+
+@media (max-width: 1299px) {
+    .card__instruction_wrapper {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 919px) {
+    .card__instruction_section {
+        padding-top: 60px;
+    }
+
+    .card__instruction_title {
+        font-size: 24px;
+    }
+
+    .card__instruction_wrapper {
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 599px) {
+    .card__instruction_title {
+        font-size: 20px;
+    }
+}

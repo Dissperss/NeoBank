@@ -1,0 +1,9 @@
+.form__wrapper {
+    margin-top: 45px;
+    padding: 32px;
+    box-shadow:
+        0 2px 4px 0 rgba(0, 0, 0, 0.2),
+        0 0 8px 0 rgba(0, 0, 0, 0.08);
+    background: #fff;
+    border-radius: 28px;
+}

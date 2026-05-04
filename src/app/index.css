@@ -13,6 +13,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -33,9 +37,21 @@ h4,
 h5,
 h6,
 ul,
-p {
+p,
+dd,
+dt,
+dl,
+input {
     margin: 0;
     padding: 0;
+}
+
+input[type='range'] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
 }
 
 a {

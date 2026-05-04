@@ -1,0 +1,33 @@
+.not__found_wrapper {
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.not__found_title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 112%;
+    color: #1c1c1e;
+}
+
+.not__found_subtitle {
+    margin-top: 32px;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 112%;
+    color: #000;
+}
+
+.not__found_text {
+    margin-top: 32px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 112%;
+    color: #4b4b4b;
+}
+
+.not__found_btn {
+    margin-top: 32px;
+}

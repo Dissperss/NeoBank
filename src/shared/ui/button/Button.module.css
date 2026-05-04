@@ -1,4 +1,5 @@
 .btn {
+    max-width: 165px;
     font-weight: 700;
     font-size: 16px;
     line-height: 112%;
@@ -10,6 +11,11 @@
     border: none;
     background: #003cff;
     cursor: pointer;
+}
+
+.btn:hover {
+    background: #7796c0;
+    transition: 0.3s all;
 }
 
 @media (max-width: 919px) {

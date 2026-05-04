@@ -1,0 +1,45 @@
+.accordion__list {
+    margin-top: 32px;
+}
+
+.accordion__list_item {
+    padding: 32px;
+    border: 1px solid #e2e8f0;
+    background: rgba(170, 170, 170, 0);
+}
+
+.list__item_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list__item_title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 147%;
+    text-align: center;
+    color: #1c1c1e;
+}
+
+.list__item_text {
+    display: inline-block;
+    margin-top: 50px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 147%;
+    color: #7b7454;
+}
+
+.list__item_btn {
+    background: none;
+    border: none;
+}
+
+.item__btn_icon {
+    transform: rotate(180deg);
+}
+.item__btn_icon_expanded {
+    transition: transform 0.2s ease;
+    transform: rotate(360deg);
+}

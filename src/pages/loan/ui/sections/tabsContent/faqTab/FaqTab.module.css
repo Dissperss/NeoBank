@@ -1,0 +1,30 @@
+.faq__section {
+    padding-top: 40px;
+}
+
+.faq__title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 147%;
+    color: #000;
+}
+
+.faq__title:last-of-type {
+    margin-top: 32px;
+}
+
+@media (max-width: 919px) {
+    .faq__title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 599px) {
+    .faq__title {
+        font-size: 20px;
+    }
+
+    .faq__title:last-of-type {
+        margin-top: 24px;
+    }
+}
