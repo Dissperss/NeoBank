@@ -25,7 +25,7 @@ export const PrescoringForm = () => {
     } = useForm<FormData>({
         mode: 'onBlur',
         defaultValues: {
-            amount: 15000,
+            amount: 150000,
             term: 6,
         },
         resolver: zodResolver(validationShema),
@@ -64,7 +64,7 @@ export const PrescoringForm = () => {
                                     onChange={field.onChange}
                                     error={errors.amount?.message}
                                     touched={touchedFields.amount}
-                                    min="15000"
+                                    min="150000"
                                     max="600000"
                                     step="1000"
                                 />

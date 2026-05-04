@@ -15,18 +15,17 @@ export const validationShema = z.object({
         .trim()
         .min(2, { message: "First name can't be empty" })
         .regex(/^[A-Za-z]+$/, 'Only latin letters'),
-    patronymic: z.string().trim().optional().or(z.literal('')),
+    middleName: z.string().trim().optional().or(z.literal('')),
     term: z.union([z.literal(6), z.literal(12), z.literal(18), z.literal(24)]),
     email: z.email('Invalid email').trim(),
     birthdate: z.string().refine(
-        (date) => {
-            const parsed = new Date(date)
-            if (isNaN(parsed.getTime())) return false
-
+        (dateStr) => {
+            const birth = new Date(dateStr)
+            if (isNaN(birth.getTime())) return false
             const today = new Date()
-            const age = today.getFullYear() - parsed.getFullYear()
-
-            return age >= 18
+            const eighteenYearsAgo = new Date()
+            eighteenYearsAgo.setFullYear(today.getFullYear() - 18)
+            return birth <= eighteenYearsAgo
         },
         { message: 'You must be at least 18 years old' },
     ),

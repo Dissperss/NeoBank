@@ -7,10 +7,10 @@ export const Faqtab = () => {
     return (
         <Section className={styles.faq__section}>
             <h2 className={styles.faq__title}>Issuing and receiving a card</h2>
-            <Accordion items={issuingData} allowMultiple={true} />
+            <Accordion items={issuingData} allowMultiple={false} />
 
             <h2 className={styles.faq__title}>Using a credit card</h2>
-            <Accordion items={usingData} allowMultiple={true} />
+            <Accordion items={usingData} allowMultiple={false} />
         </Section>
     )
 }

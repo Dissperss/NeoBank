@@ -31,7 +31,7 @@ export const fieldsConfig: FieldsCfg[] = [
         renderIcon: true,
     },
     {
-        name: 'patronymic',
+        name: 'middleName',
         label: 'Your patronymic',
         type: 'input',
         required: false,

@@ -26,10 +26,6 @@
     gap: 32px;
 }
 
-.card__promo_link {
-    scroll-behavior: smooth;
-}
-
 .promo__block_title {
     font-weight: 700;
     font-size: 47px;
