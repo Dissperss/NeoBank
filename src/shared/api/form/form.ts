@@ -1,11 +1,10 @@
 import type { FormData } from '@/features/prescoring/types/formData'
 import { commonClient } from '../common/instance'
+import { FORM_API_URL } from '@/shared/config/common'
 
 interface ApiResponse {
     applicationId: number
 }
-
-const FORM_API_URL = 'application'
 
 export const sendCreditCardData = async (
     data: FormData,
