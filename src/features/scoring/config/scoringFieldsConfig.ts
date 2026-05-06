@@ -1,7 +1,10 @@
-import type { ScoringFormData } from '@/entities/scoring/types/scoringFormData'
+import type {
+    EmploymentScoringFormData,
+    PersonalScoringFormData,
+} from '@/entities/scoring/types/scoringFormData'
 
-type ScoringFieldsCfg = {
-    name: keyof ScoringFormData
+type PersonalScoringFieldsCfg = {
+    name: keyof PersonalScoringFormData
     label: string
     type: 'input' | 'select' | 'date'
     required: boolean
@@ -13,7 +16,20 @@ type ScoringFieldsCfg = {
     }[]
 }
 
-export const scoringFieldsConfig: ScoringFieldsCfg[] = [
+type EmploymentScoringFieldsCfg = {
+    name: keyof EmploymentScoringFormData
+    label: string
+    type: 'input' | 'select' | 'date'
+    required: boolean
+    placeholder?: string
+    renderIcon: boolean
+    options?: {
+        value: string
+        label: string
+    }[]
+}
+
+export const scoringPersonalFieldsConfig: PersonalScoringFieldsCfg[] = [
     {
         name: 'gender',
         label: "What's your gender",
@@ -41,7 +57,7 @@ export const scoringFieldsConfig: ScoringFieldsCfg[] = [
     {
         name: 'dependentAmount',
         label: 'Your number of dependents',
-        type: 'input',
+        type: 'select',
         required: true,
         renderIcon: false,
     },
@@ -61,6 +77,9 @@ export const scoringFieldsConfig: ScoringFieldsCfg[] = [
         renderIcon: true,
         placeholder: '000000',
     },
+]
+
+export const scoringEmploymentFieldsConfig: EmploymentScoringFieldsCfg[] = [
     {
         name: 'employmentStatus',
         label: 'Your employment status',
