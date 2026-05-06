@@ -5,6 +5,6 @@ import type {
     scoringValidationShema,
 } from '../model/scoringValidationShema'
 
-export type PersonalScoringFormData = z.infer<typeof scoringValidationShema>
+export type ScoringFormData = z.infer<typeof scoringValidationShema>
 
 export type EmploymentScoringFormData = z.infer<typeof employmentSchema>

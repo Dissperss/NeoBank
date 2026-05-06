@@ -6,7 +6,6 @@ import { FormInput } from '@/shared/ui/formComponents/formInput'
 import { fieldsConfig } from '../config/fieldsConfig'
 import { FormSelect } from '@/shared/ui/formComponents/formSelect'
 
-import styles from './PrescoringForm.module.css'
 import { AmountControlResult } from './amountControlResult'
 import { Button } from '@/shared/ui/button'
 import { validationShema } from '../model/validationShema'
@@ -14,8 +13,17 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import type { FormData } from '../types/formData'
 import { Loader } from '@/shared/ui/loader'
 import { sendCreditCardData } from '@/shared/api/form'
+import { useApplicationStore } from '@/entities/application/model/applicationStore'
+import { useNavigate } from 'react-router-dom'
+import styles from './PrescoringForm.module.css'
+import { OFFER_API_PREFIX } from '@/shared/config/common'
 
 export const PrescoringForm = () => {
+    const navigate = useNavigate()
+    const setApplicationId = useApplicationStore(
+        (state) => state.setApplicationId,
+    )
+    const setOffers = useApplicationStore((state) => state.setOffers)
     const {
         register,
         formState: { errors, touchedFields, isSubmitting },
@@ -34,11 +42,9 @@ export const PrescoringForm = () => {
     const onSubmit = async (data: FormData) => {
         try {
             const response = await sendCreditCardData(data)
-            localStorage.setItem(
-                'loanApplicationId',
-                String(response.applicationId),
-            )
-            reset()
+            setApplicationId(response.applicationId)
+            setOffers(response.offers)
+            navigate(`/loan/${response.applicationId}/${OFFER_API_PREFIX}`)
         } catch (e) {
             console.error(e)
         }

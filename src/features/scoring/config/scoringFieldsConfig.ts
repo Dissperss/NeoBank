@@ -1,10 +1,10 @@
 import type {
     EmploymentScoringFormData,
-    PersonalScoringFormData,
+    ScoringFormData,
 } from '@/entities/scoring/types/scoringFormData'
 
 type PersonalScoringFieldsCfg = {
-    name: keyof PersonalScoringFormData
+    name: keyof ScoringFormData
     label: string
     type: 'input' | 'select' | 'date'
     required: boolean
