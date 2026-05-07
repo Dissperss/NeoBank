@@ -65,10 +65,6 @@ export const submitApply = async (data: CreditOffer) => {
             throw new Error('Server error')
         }
 
-        if (!res.data.applicationId) {
-            throw new Error('Invalid response: missing applicationId')
-        }
-
         return res.data
     } catch (error) {
         console.error(error)

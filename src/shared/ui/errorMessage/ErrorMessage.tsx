@@ -3,15 +3,16 @@ import styles from './ErrorMessage.module.css'
 
 type ErrorMessageProps = {
     onRetry: () => void | Promise<void>
+    message: string
 }
 
-export const ErrorMessage = ({ onRetry }: ErrorMessageProps) => {
+export const ErrorMessage = ({ onRetry, message }: ErrorMessageProps) => {
     return (
-        <>
-            <p className={styles.error__text}>Error loading data</p>
+        <div className={styles.error__block}>
+            <p className={styles.error__text}>{message}</p>
             <Button className={styles.error__btn} onClick={onRetry}>
                 Repeat
             </Button>
-        </>
+        </div>
     )
 }

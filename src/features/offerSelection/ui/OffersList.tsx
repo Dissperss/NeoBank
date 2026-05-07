@@ -9,11 +9,12 @@ import type { CreditOffer } from '@/entities/offer/types/offer'
 
 type OfferListProps = {
     offers: CreditOffer[]
+    onSelect: (offer: CreditOffer) => void
 }
 
-export const OffersList = ({ offers }: OfferListProps) => {
+export const OffersList = ({ offers, onSelect }: OfferListProps) => {
     return (
-        <Section>
+        <Section className={styles.offers__section}>
             <Container>
                 <div className={styles.offers__wrapper}>
                     {offers.map((offer, index) => (
@@ -25,20 +26,20 @@ export const OffersList = ({ offers }: OfferListProps) => {
                             />
                             <div className={styles.offers__item_inner}>
                                 <p className={styles.item__point}>
-                                    `Requested amount: ${offer.requestedAmount}{' '}
-                                    ₽`
+                                    Requested amount: {offer.requestedAmount} ₽
                                 </p>
                                 <p className={styles.item__point}>
-                                    `Total amount: ${offer.totalAmount} ₽`
+                                    Total amount: {offer.totalAmount} ₽
                                 </p>
                                 <p className={styles.item__point}>
-                                    `For ${offer.term} months`
+                                    For {offer.term} months
                                 </p>
                                 <p className={styles.item__point}>
-                                    `Monthly payment: ${offer.monthlyPayment} ₽`
+                                    Monthly payment:{' '}
+                                    {offer.monthlyPayment.toFixed(0)} ₽
                                 </p>
                                 <p className={styles.item__point}>
-                                    `Your rate: ${offer.rate}%`
+                                    Your rate: {offer.rate}%
                                 </p>
                                 <div className={styles.item__insurance}>
                                     <p className={styles.item__point}>
@@ -61,7 +62,10 @@ export const OffersList = ({ offers }: OfferListProps) => {
                                     )}
                                 </div>
                             </div>
-                            <Button className={styles.offers__item_btn}>
+                            <Button
+                                onClick={() => onSelect(offer)}
+                                className={styles.offers__item_btn}
+                            >
                                 Select
                             </Button>
                         </div>
