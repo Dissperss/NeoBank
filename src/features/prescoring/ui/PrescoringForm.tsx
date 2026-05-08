@@ -17,13 +17,17 @@ import { useApplicationStore } from '@/entities/application/model/applicationSto
 import { useNavigate } from 'react-router-dom'
 import styles from './PrescoringForm.module.css'
 import { OFFER_API_PREFIX } from '@/shared/config/common'
+import { STEP_VALUES } from '@/entities/application/types/enums'
+import { STEP_NUMBERS } from '@/entities/application/lib/stepDisplay'
 
 export const PrescoringForm = () => {
     const navigate = useNavigate()
     const setApplicationId = useApplicationStore(
         (state) => state.setApplicationId,
     )
+    const setStep = useApplicationStore((state) => state.setStep)
     const setOffers = useApplicationStore((state) => state.setOffers)
+    const currentStep = useApplicationStore((state) => state.currentStep)
     const {
         register,
         formState: { errors, touchedFields, isSubmitting },
@@ -43,6 +47,7 @@ export const PrescoringForm = () => {
         try {
             const response = await sendCreditCardData(data)
             setApplicationId(response.applicationId)
+            setStep(STEP_VALUES.OFFERS)
             setOffers(response.offers)
             navigate(`/loan/${response.applicationId}/${OFFER_API_PREFIX}`)
         } catch (e) {
@@ -58,7 +63,9 @@ export const PrescoringForm = () => {
                         <h3 className={styles.block__header_title}>
                             Customize your card
                         </h3>
-                        <p className={styles.block__header_step}>Step 1 of 5</p>
+                        <p className={styles.block__header_step}>
+                            Step {STEP_NUMBERS[currentStep]} of 5
+                        </p>
                     </div>
                     <div className={styles.card__block_slider}>
                         <Controller
@@ -157,13 +164,17 @@ export const PrescoringForm = () => {
                         )
                     })}
                 </div>
-                <Button
-                    className={styles.contact__form_btn}
-                    type="submit"
-                    disabled={isSubmitting}
-                >
-                    {isSubmitting ? <Loader /> : 'Continue'}
-                </Button>
+                {isSubmitting ? (
+                    <Loader />
+                ) : (
+                    <Button
+                        className={styles.contact__form_btn}
+                        type="submit"
+                        disabled={isSubmitting}
+                    >
+                        Continue
+                    </Button>
+                )}
             </form>
         </FormWrapper>
     )

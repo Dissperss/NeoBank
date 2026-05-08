@@ -118,7 +118,10 @@ export const useApplicationStore = create<
             }),
             onRehydrateStorage: () => {
                 return (state) => {
-                    if (state?.applicationId) {
+                    if (
+                        state?.applicationId &&
+                        state?.currentStep === STEP_VALUES.PRESCORING
+                    ) {
                         getApplicationStatus(state.applicationId).then(
                             (res) => {
                                 state.setStatus(res.status as ApplicationStatus)

@@ -14,6 +14,7 @@ type PersonalScoringFieldsCfg = {
         value: string
         label: string
     }[]
+    valueAsNumber?: boolean
 }
 
 type EmploymentScoringFieldsCfg = {
@@ -27,6 +28,7 @@ type EmploymentScoringFieldsCfg = {
         value: string
         label: string
     }[]
+    valueAsNumber?: boolean
 }
 
 export const scoringPersonalFieldsConfig: PersonalScoringFieldsCfg[] = [
@@ -60,6 +62,13 @@ export const scoringPersonalFieldsConfig: PersonalScoringFieldsCfg[] = [
         type: 'select',
         required: true,
         renderIcon: false,
+        valueAsNumber: true,
+        options: [
+            { value: '1', label: '1' },
+            { value: '2', label: '2' },
+            { value: '3', label: '3' },
+            { value: '4', label: '4' },
+        ],
     },
     {
         name: 'passportIssueDate',
@@ -108,6 +117,7 @@ export const scoringEmploymentFieldsConfig: EmploymentScoringFieldsCfg[] = [
         required: true,
         renderIcon: true,
         placeholder: 'For example 100 000',
+        valueAsNumber: true,
     },
     {
         name: 'position',
@@ -129,6 +139,7 @@ export const scoringEmploymentFieldsConfig: EmploymentScoringFieldsCfg[] = [
         required: true,
         renderIcon: true,
         placeholder: 'For example 10',
+        valueAsNumber: true,
     },
     {
         name: 'workExperienceCurrent',
@@ -137,5 +148,6 @@ export const scoringEmploymentFieldsConfig: EmploymentScoringFieldsCfg[] = [
         required: true,
         renderIcon: true,
         placeholder: 'For example 2',
+        valueAsNumber: true,
     },
 ]

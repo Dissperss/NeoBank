@@ -29,6 +29,7 @@ export const OfferPage = () => {
     const setMaxReachedStep = useApplicationStore(
         (state) => state.setMaxReachedStep,
     )
+    const setStep = useApplicationStore((state) => state.setStep)
 
     const onSelect = async (offer: CreditOffer) => {
         setError(null)
@@ -36,7 +37,8 @@ export const OfferPage = () => {
         setLoading(true)
         try {
             await submitApply(offer)
-            setMaxReachedStep(STEP_VALUES.COMPLETE)
+            setLoading(false)
+            setMaxReachedStep(STEP_VALUES.SCORING)
         } catch (error) {
             setLoading(false)
             setError('Failed to select offer')
@@ -48,7 +50,7 @@ export const OfferPage = () => {
         setLoading(true)
         try {
             await submitApply(selectedOffer!)
-            setMaxReachedStep(STEP_VALUES.COMPLETE)
+            setMaxReachedStep(STEP_VALUES.SCORING)
         } catch (error) {
             setError('Error while sending the apply')
         }
@@ -60,8 +62,9 @@ export const OfferPage = () => {
     }
 
     useEffect(() => {
+        setStep(STEP_VALUES.OFFERS)
         setMaxReachedStep(STEP_VALUES.OFFERS)
-    }, [])
+    }, [setStep])
 
     return (
         <Container>

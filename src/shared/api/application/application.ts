@@ -31,7 +31,7 @@ export const submitScoring = async (
     data: ScoringFormData,
 ) => {
     try {
-        const res = await commonClient.post(
+        const res = await commonClient.put(
             `${FORM_API_URL}/${REGISTRATION_API_PREFIX}/${applicationId}`,
             data,
         )

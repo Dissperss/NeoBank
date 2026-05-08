@@ -14,4 +14,12 @@ export default defineConfig({
             '@': path.resolve(__dirname, './src'),
         },
     },
+    // server: {
+    //     proxy: {
+    //         '/application': {
+    //             target: 'http://192.168.99.100:8080',
+    //             changeOrigin: true,
+    //         },
+    //     },
+    // },
 })

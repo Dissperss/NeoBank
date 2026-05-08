@@ -2,32 +2,56 @@ import { scoringValidationShema } from '@/entities/scoring/model/scoringValidati
 import { FormWrapper } from '@/shared/ui/form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import styles from './ScoringForm.module.css'
-import type { ScoringFormData } from '@/entities/scoring/types/scoringFormData'
 import {
     scoringEmploymentFieldsConfig,
     scoringPersonalFieldsConfig,
 } from '../config/scoringFieldsConfig'
 import { FormInput } from '@/shared/ui/formComponents/formInput'
 import { FormSelect } from '@/shared/ui/formComponents/formSelect'
+import { FormField } from '@/shared/ui/formComponents/formField'
+import type { ScoringFormData } from '@/entities/scoring/types/scoringFormData'
+import { Button } from '@/shared/ui/button'
+import { Loader } from '@/shared/ui/loader'
+import { submitScoring } from '@/shared/api/application'
+import { useApplicationStore } from '@/entities/application/model/applicationStore'
+import { STEP_VALUES } from '@/entities/application/types/enums'
+import { STEP_NUMBERS } from '@/entities/application/lib/stepDisplay'
+import { ErrorMessage } from '@/shared/ui/errorMessage'
 
 export const ScoringForm = () => {
-    const navigate = useNavigate()
+    const { applicationId } = useParams()
+    const setStep = useApplicationStore((state) => state.setStep)
+    const setLoading = useApplicationStore((state) => state.setLoading)
+    const setError = useApplicationStore((state) => state.setError)
+    const error = useApplicationStore((state) => state.error)
+    const setMaxReachedStep = useApplicationStore(
+        (state) => state.setMaxReachedStep,
+    )
+    const currentStep = useApplicationStore((state) => state.currentStep)
     const {
         register,
         formState: { errors, touchedFields, isSubmitting },
         handleSubmit,
         reset,
-        control,
-    } = useForm({
+    } = useForm<ScoringFormData>({
         mode: 'onBlur',
         resolver: zodResolver(scoringValidationShema),
     })
 
     const onSubmit = async (data: ScoringFormData) => {
+        setError(null)
+        setLoading(true)
         try {
-        } catch (error) {}
+            const res = await submitScoring(Number(applicationId), data)
+            setLoading(false)
+            setStep(STEP_VALUES.DOCUMENTS)
+            setMaxReachedStep(STEP_VALUES.DOCUMENTS)
+        } catch (error) {
+            setLoading(false)
+            setError('Failed to submit scoring form')
+        }
     }
 
     return (
@@ -36,7 +60,9 @@ export const ScoringForm = () => {
                 <h2 className={styles.scoring__form_title}>
                     Continuation of the application
                 </h2>
-                <p className={styles.scoring__form_text}>Step 2 of 5</p>
+                <p className={styles.scoring__form_text}>
+                    Step {STEP_NUMBERS[currentStep]} of 5
+                </p>
             </header>
             <form
                 className={styles.scoring__form}
@@ -44,9 +70,13 @@ export const ScoringForm = () => {
             >
                 <div className={styles.scoring__form_personal}>
                     {scoringPersonalFieldsConfig.map((field) => {
-                        const registration = register(field.name)
+                        const registration = register(field.name, {
+                            required: field.required,
+                            valueAsNumber: field.valueAsNumber ?? false,
+                        })
                         return (
                             <FormField
+                                className={styles.form__personal_fields}
                                 key={field.name}
                                 label={field.label}
                                 htmlFor={field.name}
@@ -54,9 +84,17 @@ export const ScoringForm = () => {
                             >
                                 {field.type === 'input' && (
                                     <FormInput
-                                        registration={register(field.name)}
+                                        registration={register(field.name, {
+                                            required: field.required,
+                                            valueAsNumber:
+                                                field.valueAsNumber ?? false,
+                                        })}
                                         id={field.name}
-                                        touched={touchedFields[field.name]}
+                                        touched={
+                                            touchedFields[field.name] as
+                                                | boolean
+                                                | undefined
+                                        }
                                         error={errors[field.name]?.message}
                                         renderIcon={field.renderIcon}
                                         placeholder={field.placeholder}
@@ -67,19 +105,32 @@ export const ScoringForm = () => {
                                     <FormSelect
                                         registration={register(field.name, {
                                             required: field.required,
-                                            valueAsNumber: true,
+                                            valueAsNumber:
+                                                field.valueAsNumber ?? false,
                                         })}
                                         id={field.name}
                                         options={field.options}
-                                        touched={touchedFields[field.name]}
+                                        touched={
+                                            touchedFields[field.name] as
+                                                | boolean
+                                                | undefined
+                                        }
                                         error={errors[field.name]?.message}
                                         submitted={isSubmitting}
                                     />
                                 )}
                                 {field.type === 'date' && (
                                     <FormInput
-                                        registration={register(field.name)}
-                                        touched={touchedFields[field.name]}
+                                        registration={register(field.name, {
+                                            required: field.required,
+                                            valueAsNumber:
+                                                field.valueAsNumber ?? false,
+                                        })}
+                                        touched={
+                                            touchedFields[field.name] as
+                                                | boolean
+                                                | undefined
+                                        }
                                         error={errors[field.name]?.message}
                                         renderIcon={field.renderIcon}
                                         placeholder={field.placeholder}
@@ -101,22 +152,44 @@ export const ScoringForm = () => {
                         )
                     })}
                 </div>
+                <h2 className={styles.form__employment_title}>Employment</h2>
                 <div className={styles.scoring__form_employment}>
                     {scoringEmploymentFieldsConfig.map((field) => {
-                        const registration = register(field.name)
+                        const registration = register(
+                            `employment.${field.name}`,
+                            {
+                                required: field.required,
+                                valueAsNumber: field.valueAsNumber ?? false,
+                            },
+                        )
                         return (
                             <FormField
-                                key={field.name}
+                                key={`employment.${field.name}`}
                                 label={field.label}
-                                htmlFor={field.name}
-                                error={errors[field.name]?.message}
+                                htmlFor={`employment.${field.name}`}
+                                error={errors.employment?.[field.name]?.message}
                             >
                                 {field.type === 'input' && (
                                     <FormInput
-                                        registration={register(field.name)}
-                                        id={field.name}
-                                        touched={touchedFields[field.name]}
-                                        error={errors[field.name]?.message}
+                                        registration={register(
+                                            `employment.${field.name}`,
+                                            {
+                                                required: field.required,
+                                                valueAsNumber:
+                                                    field.valueAsNumber ??
+                                                    false,
+                                            },
+                                        )}
+                                        id={`employment.${field.name}`}
+                                        touched={
+                                            touchedFields.employment?.[
+                                                field.name
+                                            ]
+                                        }
+                                        error={
+                                            errors.employment?.[field.name]
+                                                ?.message
+                                        }
                                         renderIcon={field.renderIcon}
                                         placeholder={field.placeholder}
                                         submitted={isSubmitting}
@@ -124,22 +197,50 @@ export const ScoringForm = () => {
                                 )}
                                 {field.type === 'select' && (
                                     <FormSelect
-                                        registration={register(field.name, {
-                                            required: field.required,
-                                            valueAsNumber: true,
-                                        })}
-                                        id={field.name}
+                                        registration={register(
+                                            `employment.${field.name}`,
+                                            {
+                                                required: field.required,
+                                                valueAsNumber:
+                                                    field.valueAsNumber ??
+                                                    false,
+                                            },
+                                        )}
+                                        id={`employment.${field.name}`}
                                         options={field.options}
-                                        touched={touchedFields[field.name]}
-                                        error={errors[field.name]?.message}
+                                        touched={
+                                            touchedFields.employment?.[
+                                                field.name
+                                            ]
+                                        }
+                                        error={
+                                            errors.employment?.[field.name]
+                                                ?.message
+                                        }
                                         submitted={isSubmitting}
                                     />
                                 )}
                                 {field.type === 'date' && (
                                     <FormInput
-                                        registration={register(field.name)}
-                                        touched={touchedFields[field.name]}
-                                        error={errors[field.name]?.message}
+                                        registration={register(
+                                            `employment.${field.name}`,
+
+                                            {
+                                                required: field.required,
+                                                valueAsNumber:
+                                                    field.valueAsNumber ??
+                                                    false,
+                                            },
+                                        )}
+                                        touched={
+                                            touchedFields.employment?.[
+                                                field.name
+                                            ]
+                                        }
+                                        error={
+                                            errors.employment?.[field.name]
+                                                ?.message
+                                        }
                                         renderIcon={field.renderIcon}
                                         placeholder={field.placeholder}
                                         type="text"
@@ -160,6 +261,22 @@ export const ScoringForm = () => {
                         )
                     })}
                 </div>
+                {isSubmitting ? (
+                    <Loader />
+                ) : error ? (
+                    <ErrorMessage
+                        message={error}
+                        onRetry={handleSubmit(onSubmit)}
+                    />
+                ) : (
+                    <Button
+                        className={styles.scoring__form_btn}
+                        type="submit"
+                        disabled={isSubmitting}
+                    >
+                        Continue
+                    </Button>
+                )}
             </form>
         </FormWrapper>
     )
