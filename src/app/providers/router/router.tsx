@@ -30,9 +30,10 @@ export const router = createBrowserRouter([
                 element: <ScoringPage />,
             },
             {
-                path: 'document/:applicationId',
+                path: 'loan/:applicationId/document',
                 element: <DocumentPage />,
             },
+            // СМЕНИТЬ РОУТЫ ВНИЗУ ПО АНАЛОГИИ ДЛЯ С ДОКУМЕНТСПЕЙДЖ + СДЕЛАТЬ LOCALSTORAGE Для сохранения шагов
             {
                 path: 'document/:applicationId/sign',
                 // element: <DocumentPage />,
