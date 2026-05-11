@@ -1,0 +1,13 @@
+.denied__application_title {
+    text-align: center;
+}
+
+.denied__application_text {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.denied__application_btn {
+    display: block;
+    margin: 20px auto 0 auto;
+}

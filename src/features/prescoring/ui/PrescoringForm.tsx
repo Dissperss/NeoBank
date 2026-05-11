@@ -32,7 +32,6 @@ export const PrescoringForm = () => {
         register,
         formState: { errors, touchedFields, isSubmitting },
         handleSubmit,
-        reset,
         control,
     } = useForm<FormData>({
         mode: 'onBlur',

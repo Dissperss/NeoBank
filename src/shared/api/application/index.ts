@@ -1,1 +1,6 @@
-export { getApplicationStatus, submitScoring, submitApply } from './application'
+export {
+    getApplicationStatus,
+    submitScoring,
+    submitApply,
+    denyApplication,
+} from './application'

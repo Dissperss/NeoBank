@@ -1,0 +1,81 @@
+.payment__wrapper {
+    margin-top: 20px;
+    padding: 32px;
+    box-shadow:
+        0 2px 4px 0 rgba(0, 0, 0, 0.2),
+        0 0 8px 0 rgba(0, 0, 0, 0.08);
+    background: #fff;
+    border-radius: 28px;
+}
+
+.payment__header {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+}
+
+.payment__header_title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 147%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #1c1c1e;
+}
+
+.payment__header_step {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 147%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #000;
+}
+
+.payment__table {
+    margin-top: 75px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table__header__title {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.payment__table_row {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.payment__table_value {
+    padding: 10px 0;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 147%;
+    letter-spacing: 0.02em;
+    color: #1a202c;
+}
+
+.payment__footer {
+    margin-top: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer__right {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    min-width: max-content;
+}
+
+.footer__deny_btn {
+    max-width: 96px;
+    width: 100%;
+    background: rgba(217, 55, 55, 0.8);
+}
+
+.footer__send_btn {
+    width: 96px;
+}

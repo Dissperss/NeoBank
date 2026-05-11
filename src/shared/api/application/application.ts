@@ -1,6 +1,7 @@
 import {
     ADMIN_API_PREFIX,
     APPLY_API_PREFIX,
+    DENY_API_PREFIX,
     FORM_API_URL,
     REGISTRATION_API_PREFIX,
 } from '@/shared/config/common/common'
@@ -40,10 +41,6 @@ export const submitScoring = async (
             throw new Error('Server error')
         }
 
-        if (!res.data.applicationId) {
-            throw new Error('Invalid response: missing applicationId')
-        }
-
         return res.data
     } catch (error) {
         console.error(error)
@@ -71,6 +68,26 @@ export const submitApply = async (data: CreditOffer) => {
 
         throw new Error(
             `Failed to submit apply: ${error instanceof Error ? error.message : 'Unknown error'}`,
+        )
+    }
+}
+
+export const denyApplication = async (applicationId: number) => {
+    try {
+        const res = await commonClient.post(
+            `${FORM_API_URL}/${applicationId}/${DENY_API_PREFIX}`,
+        )
+
+        if (res.status < 200 || res.status >= 300) {
+            throw new Error('Server error')
+        }
+
+        return res.data
+    } catch (error) {
+        console.error(error)
+
+        throw new Error(
+            `Failed to deny application: ${error instanceof Error ? error.message : 'Unknown error'}`,
         )
     }
 }

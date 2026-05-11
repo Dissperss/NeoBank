@@ -3,5 +3,4 @@ export {
     confirmDocument,
     signDocument,
     verifyCode,
-    denyApplication,
 } from './document'

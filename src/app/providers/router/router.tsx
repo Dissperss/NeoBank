@@ -6,6 +6,7 @@ import { LoanPage } from '@/pages/loan'
 import { NotFoundPage } from '@/pages/notFound'
 import { OfferPage } from '@/pages/offers'
 import { ScoringPage } from '@/pages/scoring'
+import { DocumentPage } from '@/pages/document'
 
 export const router = createBrowserRouter([
     {
@@ -27,6 +28,22 @@ export const router = createBrowserRouter([
             {
                 path: 'loan/:applicationId',
                 element: <ScoringPage />,
+            },
+            {
+                path: 'document/:applicationId',
+                element: <DocumentPage />,
+            },
+            {
+                path: 'document/:applicationId/sign',
+                // element: <DocumentPage />,
+            },
+            {
+                path: 'document/:applicationId/sign/code',
+                // element: <DocumentPage />,
+            },
+            {
+                path: 'loan/:applicationId/deny',
+                // element: <DocumentPage />,
             },
             {
                 path: '*',

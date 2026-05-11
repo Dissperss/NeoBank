@@ -12,6 +12,7 @@
 }
 
 .scoring__decision_text {
+    margin-top: 10px;
     font-weight: 500;
     font-size: 16px;
     line-height: 112%;

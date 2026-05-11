@@ -38,6 +38,7 @@ export const OfferPage = () => {
         try {
             await submitApply(offer)
             setLoading(false)
+            setStep(STEP_VALUES.SCORING)
             setMaxReachedStep(STEP_VALUES.SCORING)
         } catch (error) {
             setLoading(false)
@@ -50,6 +51,7 @@ export const OfferPage = () => {
         setLoading(true)
         try {
             await submitApply(selectedOffer!)
+            setStep(STEP_VALUES.SCORING)
             setMaxReachedStep(STEP_VALUES.SCORING)
         } catch (error) {
             setError('Error while sending the apply')
@@ -64,7 +66,7 @@ export const OfferPage = () => {
     useEffect(() => {
         setStep(STEP_VALUES.OFFERS)
         setMaxReachedStep(STEP_VALUES.OFFERS)
-    }, [setStep])
+    }, [setStep, setMaxReachedStep])
 
     return (
         <Container>
