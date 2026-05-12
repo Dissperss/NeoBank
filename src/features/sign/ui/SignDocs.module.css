@@ -1,0 +1,60 @@
+.sign__docs_wrapper {
+    padding-top: 100px;
+}
+
+.sign__docs_header {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+}
+
+.sign__docs_title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 112%;
+    text-align: center;
+    color: #1c1c1e;
+}
+
+.sign__docs_step {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 112%;
+    text-align: center;
+    color: #000;
+}
+
+.sign__docs_text {
+    margin-top: 32px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 112%;
+    color: #4f5665;
+}
+
+.sign__docs_link {
+    display: flex;
+    margin-top: 32px;
+    align-items: center;
+    gap: 12px;
+}
+
+.docs__link_text {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 112%;
+    color: #000;
+}
+
+.sign__docs_footer {
+    margin-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 80px;
+}
+
+.docs__footer_btn {
+    max-width: 160px;
+    width: 100%;
+}

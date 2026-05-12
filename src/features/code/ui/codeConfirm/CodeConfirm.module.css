@@ -1,0 +1,9 @@
+.code__wrapper {
+    padding-top: 100px;
+    text-align: center;
+}
+
+.code__error {
+    margin-top: 20px;
+    color: red;
+}
