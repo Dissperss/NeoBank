@@ -1,3 +1,23 @@
 .docs__formed {
-    margin: 0 auto;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.docs__formed_title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 112%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #1c1c1e;
+}
+
+.docs__formed_text {
+    margin-top: 32px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 112%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #4f5665;
 }

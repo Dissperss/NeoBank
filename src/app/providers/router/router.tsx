@@ -45,10 +45,6 @@ export const router = createBrowserRouter([
                 element: <CodePage />,
             },
             {
-                path: 'loan/:applicationId/deny',
-                // element: <DocumentPage />,
-            },
-            {
                 path: '*',
                 element: <NotFoundPage />,
             },

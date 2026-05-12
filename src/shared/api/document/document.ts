@@ -67,14 +67,16 @@ export const signDocument = async (applicationId: number) => {
     }
 }
 
-export const verifyCode = async (
-    applicationId: number,
-    data: { code: string },
-) => {
+export const verifyCode = async (applicationId: number, sesCode: number) => {
     try {
         const res = await commonClient.post(
             `${DOCUMENT_API_URL}/${applicationId}/${SIGN_API_PREFIX}/${CODE_API_PREFIX}`,
-            data,
+            sesCode,
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            },
         )
 
         if (res.status < 200 || res.status >= 300) {

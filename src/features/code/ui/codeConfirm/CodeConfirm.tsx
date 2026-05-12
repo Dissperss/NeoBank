@@ -21,7 +21,7 @@ export const CodeConfirm = () => {
     const handleCodeSubmit = async (code: string) => {
         try {
             setError(null)
-            await verifyCode(Number(applicationId), { code })
+            await verifyCode(Number(applicationId), Number(code))
             setIsConfirmed(true)
             setStep(STEP_VALUES.COMPLETE)
             setMaxReachedStep(STEP_VALUES.COMPLETE)

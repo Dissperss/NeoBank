@@ -1,0 +1,26 @@
+.code__completed {
+    padding-top: 40px;
+    text-align: center;
+}
+
+.code__completed_title {
+    margin-top: 32px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 147%;
+    color: #1c1c1e;
+}
+
+.code__completed_text {
+    margin-top: 32px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 147%;
+    text-align: center;
+    color: #4f5665;
+}
+
+.code__completed_btn {
+    margin-top: 32px;
+    max-width: 268px;
+}
