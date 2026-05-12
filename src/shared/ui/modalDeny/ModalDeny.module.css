@@ -1,0 +1,74 @@
+.modal__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal__wrapper {
+    padding: 16px;
+    background: #fff;
+    max-width: 450px;
+    width: 100%;
+}
+
+.modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal__header_title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 147%;
+    letter-spacing: 0.02em;
+
+    color: #1c1c1e;
+}
+
+.modal__header_btn {
+    display: block;
+    background: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+}
+
+.modal__text {
+    margin-top: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 147%;
+    letter-spacing: 0.02em;
+    color: #1a202c;
+}
+
+.modal__footer {
+    margin-top: 35px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+}
+
+.modal__deny_btn {
+    background: rgba(217, 55, 55, 0.8);
+    max-width: 96px;
+    width: 100%;
+}
+
+.modal__cancel_btn {
+    max-width: 96px;
+    width: 100%;
+}
+
+.modal__home_btn {
+    display: block;
+    margin-top: 35px;
+    max-width: 128px;
+    width: 100%;
+    margin-left: auto;
+}

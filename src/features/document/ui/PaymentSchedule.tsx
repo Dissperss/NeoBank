@@ -11,11 +11,15 @@ import { Button } from '@/shared/ui/button'
 import { Checkbox } from '@/shared/ui/checkbox'
 import { STEP_VALUES } from '@/entities/application/types/enums'
 import { DeniedApplication } from '@/shared/ui/deniedApplication'
+import { denyApplication } from '@/shared/api/application'
+import { ModalDeny } from '@/shared/ui/modalDeny'
 
 export const PaymentSchedule = () => {
     const [sortField, setSortField] = useState<
         keyof PaymentScheduleItem | null
     >(null)
+    const [isDenied, setIsDenied] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(false)
     const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc')
     const [paymentData, setPaymentData] = useState<PaymentScheduleItem[]>([])
     const [status, setStatus] = useState<string>('')
@@ -47,6 +51,15 @@ export const PaymentSchedule = () => {
         }
     }
 
+    const handleDeny = async () => {
+        try {
+            await denyApplication(Number(applicationId))
+            setIsDenied(true)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     useEffect(() => {
         const getData = async () => {
             try {
@@ -68,165 +81,189 @@ export const PaymentSchedule = () => {
     }, [])
 
     return (
-        <Container>
-            <div className={styles.payment__wrapper}>
-                {status === 'CC_DENIED' || status === 'REQUEST_DENIED' ? (
-                    <DeniedApplication />
-                ) : (
-                    <>
-                        <header className={styles.payment__header}>
-                            <h2 className={styles.payment__header_title}>
-                                Payment Schedule
-                            </h2>
-                            <p className={styles.payment__header_step}>
-                                Step {STEP_NUMBERS[currentStep]} of 5
-                            </p>
-                        </header>
-                        <table className={styles.payment__table}>
-                            <thead className={styles.payment__table_header}>
-                                <tr className={styles.table__header__title}>
-                                    <th>
-                                        <TableTitle
-                                            onClick={() => handleSort('number')}
-                                            sortDirection={
-                                                sortField === 'number'
-                                                    ? sortDir
-                                                    : null
-                                            }
-                                            titleText="number"
-                                        />
-                                    </th>
-                                    <th>
-                                        <TableTitle
-                                            onClick={() => handleSort('date')}
-                                            sortDirection={
-                                                sortField === 'date'
-                                                    ? sortDir
-                                                    : null
-                                            }
-                                            titleText="date"
-                                        />
-                                    </th>
-                                    <th>
-                                        <TableTitle
-                                            onClick={() =>
-                                                handleSort('totalPayment')
-                                            }
-                                            sortDirection={
-                                                sortField === 'totalPayment'
-                                                    ? sortDir
-                                                    : null
-                                            }
-                                            titleText="total payment"
-                                        />
-                                    </th>
-                                    <th>
-                                        <TableTitle
-                                            onClick={() =>
-                                                handleSort('interestPayment')
-                                            }
-                                            sortDirection={
-                                                sortField === 'interestPayment'
-                                                    ? sortDir
-                                                    : null
-                                            }
-                                            titleText="interest payment"
-                                        />
-                                    </th>
-                                    <th>
-                                        <TableTitle
-                                            onClick={() =>
-                                                handleSort('debtPayment')
-                                            }
-                                            sortDirection={
-                                                sortField === 'debtPayment'
-                                                    ? sortDir
-                                                    : null
-                                            }
-                                            titleText="debt payment"
-                                        />
-                                    </th>
-                                    <th>
-                                        <TableTitle
-                                            onClick={() =>
-                                                handleSort('remainingDebt')
-                                            }
-                                            sortDirection={
-                                                sortField === 'remainingDebt'
-                                                    ? sortDir
-                                                    : null
-                                            }
-                                            titleText="remaining debt"
-                                        />
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody className={styles.payment__table_inner}>
-                                {sortedData.map((item) => (
-                                    <tr
-                                        key={item.number}
-                                        className={styles.payment__table_row}
-                                    >
-                                        <td
-                                            className={
-                                                styles.payment__table_value
-                                            }
-                                        >
-                                            {item.number}
-                                        </td>
-                                        <td
-                                            className={
-                                                styles.payment__table_value
-                                            }
-                                        >
-                                            {item.date}
-                                        </td>
-                                        <td
-                                            className={
-                                                styles.payment__table_value
-                                            }
-                                        >
-                                            {item.totalPayment}
-                                        </td>
-                                        <td
-                                            className={
-                                                styles.payment__table_value
-                                            }
-                                        >
-                                            {item.interestPayment}
-                                        </td>
-                                        <td
-                                            className={
-                                                styles.payment__table_value
-                                            }
-                                        >
-                                            {item.debtPayment}
-                                        </td>
-                                        <td
-                                            className={
-                                                styles.payment__table_value
-                                            }
-                                        >
-                                            {item.remainingDebt}
-                                        </td>
+        <>
+            <ModalDeny
+                isOpen={isModalOpen}
+                onClose={() => {
+                    setIsModalOpen(false)
+                    setIsDenied(false)
+                }}
+                onDeny={handleDeny}
+                isDenied={isDenied}
+            />
+            <Container>
+                <div className={styles.payment__wrapper}>
+                    {status === 'CC_DENIED' || status === 'REQUEST_DENIED' ? (
+                        <DeniedApplication />
+                    ) : (
+                        <>
+                            <header className={styles.payment__header}>
+                                <h2 className={styles.payment__header_title}>
+                                    Payment Schedule
+                                </h2>
+                                <p className={styles.payment__header_step}>
+                                    Step {STEP_NUMBERS[currentStep]} of 5
+                                </p>
+                            </header>
+                            <table className={styles.payment__table}>
+                                <thead className={styles.payment__table_header}>
+                                    <tr className={styles.table__header__title}>
+                                        <th>
+                                            <TableTitle
+                                                onClick={() =>
+                                                    handleSort('number')
+                                                }
+                                                sortDirection={
+                                                    sortField === 'number'
+                                                        ? sortDir
+                                                        : null
+                                                }
+                                                titleText="number"
+                                            />
+                                        </th>
+                                        <th>
+                                            <TableTitle
+                                                onClick={() =>
+                                                    handleSort('date')
+                                                }
+                                                sortDirection={
+                                                    sortField === 'date'
+                                                        ? sortDir
+                                                        : null
+                                                }
+                                                titleText="date"
+                                            />
+                                        </th>
+                                        <th>
+                                            <TableTitle
+                                                onClick={() =>
+                                                    handleSort('totalPayment')
+                                                }
+                                                sortDirection={
+                                                    sortField === 'totalPayment'
+                                                        ? sortDir
+                                                        : null
+                                                }
+                                                titleText="total payment"
+                                            />
+                                        </th>
+                                        <th>
+                                            <TableTitle
+                                                onClick={() =>
+                                                    handleSort(
+                                                        'interestPayment',
+                                                    )
+                                                }
+                                                sortDirection={
+                                                    sortField ===
+                                                    'interestPayment'
+                                                        ? sortDir
+                                                        : null
+                                                }
+                                                titleText="interest payment"
+                                            />
+                                        </th>
+                                        <th>
+                                            <TableTitle
+                                                onClick={() =>
+                                                    handleSort('debtPayment')
+                                                }
+                                                sortDirection={
+                                                    sortField === 'debtPayment'
+                                                        ? sortDir
+                                                        : null
+                                                }
+                                                titleText="debt payment"
+                                            />
+                                        </th>
+                                        <th>
+                                            <TableTitle
+                                                onClick={() =>
+                                                    handleSort('remainingDebt')
+                                                }
+                                                sortDirection={
+                                                    sortField ===
+                                                    'remainingDebt'
+                                                        ? sortDir
+                                                        : null
+                                                }
+                                                titleText="remaining debt"
+                                            />
+                                        </th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                        <div className={styles.payment__footer}>
-                            <Button className={styles.footer__deny_btn}>
-                                Deny
-                            </Button>
-                            <div className={styles.footer__right}>
-                                <Checkbox text="I agree with the payment schedule" />
-                                <Button className={styles.footer__send_btn}>
-                                    Send
+                                </thead>
+                                <tbody className={styles.payment__table_inner}>
+                                    {sortedData.map((item) => (
+                                        <tr
+                                            key={item.number}
+                                            className={
+                                                styles.payment__table_row
+                                            }
+                                        >
+                                            <td
+                                                className={
+                                                    styles.payment__table_value
+                                                }
+                                            >
+                                                {item.number}
+                                            </td>
+                                            <td
+                                                className={
+                                                    styles.payment__table_value
+                                                }
+                                            >
+                                                {item.date}
+                                            </td>
+                                            <td
+                                                className={
+                                                    styles.payment__table_value
+                                                }
+                                            >
+                                                {item.totalPayment}
+                                            </td>
+                                            <td
+                                                className={
+                                                    styles.payment__table_value
+                                                }
+                                            >
+                                                {item.interestPayment}
+                                            </td>
+                                            <td
+                                                className={
+                                                    styles.payment__table_value
+                                                }
+                                            >
+                                                {item.debtPayment}
+                                            </td>
+                                            <td
+                                                className={
+                                                    styles.payment__table_value
+                                                }
+                                            >
+                                                {item.remainingDebt}
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                            <div className={styles.payment__footer}>
+                                <Button
+                                    onClick={() => setIsModalOpen(true)}
+                                    className={styles.footer__deny_btn}
+                                >
+                                    Deny
                                 </Button>
+                                <div className={styles.footer__right}>
+                                    <Checkbox text="I agree with the payment schedule" />
+                                    <Button className={styles.footer__send_btn}>
+                                        Send
+                                    </Button>
+                                </div>
                             </div>
-                        </div>
-                    </>
-                )}
-            </div>
-        </Container>
+                        </>
+                    )}
+                </div>
+            </Container>
+        </>
     )
 }

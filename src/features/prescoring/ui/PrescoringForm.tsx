@@ -63,7 +63,7 @@ export const PrescoringForm = () => {
                             Customize your card
                         </h3>
                         <p className={styles.block__header_step}>
-                            Step {STEP_NUMBERS[currentStep]} of 5
+                            Step {STEP_NUMBERS[STEP_VALUES.PRESCORING]} of 5
                         </p>
                     </div>
                     <div className={styles.card__block_slider}>
