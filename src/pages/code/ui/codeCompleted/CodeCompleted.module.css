@@ -24,3 +24,23 @@
     margin-top: 32px;
     max-width: 268px;
 }
+
+@media (max-width: 919px) {
+    .code__completed_title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 599px) {
+    .code__completed {
+        padding-top: 24px;
+    }
+
+    .code__completed_title {
+        font-size: 20px;
+    }
+
+    .code__completed_btn {
+        max-width: 100%;
+    }
+}

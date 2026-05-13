@@ -29,6 +29,7 @@ export const PaymentSchedule = () => {
     const { applicationId } = useParams()
     const currentStep = useApplicationStore((state) => state.currentStep)
     const setStep = useApplicationStore((state) => state.setStep)
+    const setError = useApplicationStore((state) => state.setError)
     const setMaxReachedStep = useApplicationStore(
         (state) => state.setMaxReachedStep,
     )
@@ -41,12 +42,11 @@ export const PaymentSchedule = () => {
 
                 setPaymentData(paymentSchedule)
                 setStatus(appStatus)
+                setStep(STEP_VALUES.DOCUMENTS)
+                setMaxReachedStep(STEP_VALUES.DOCUMENTS)
             } catch (error) {
                 console.error(error)
                 setPaymentData([])
-            } finally {
-                setStep(STEP_VALUES.DOCUMENTS)
-                setMaxReachedStep(STEP_VALUES.DOCUMENTS)
             }
         }
 
@@ -84,6 +84,7 @@ export const PaymentSchedule = () => {
     }
 
     const handleSend = async () => {
+        setError(null)
         if (!isChecked) return
         try {
             await confirmDocument(Number(applicationId))
@@ -92,6 +93,7 @@ export const PaymentSchedule = () => {
             setMaxReachedStep(STEP_VALUES.SIGN)
         } catch (error) {
             console.error(error)
+            setError('Error denying application')
         }
     }
 

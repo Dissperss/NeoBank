@@ -48,3 +48,39 @@
     margin-top: 90px;
     width: 100%;
 }
+
+@media (max-width: 1299px) {
+    .offers__wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .offers__item {
+        flex: 1 1 calc(50% - 40px);
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 919px) {
+    .offers__section {
+        padding-top: 30px;
+    }
+
+    .offers__wrapper {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 599px) {
+    .offers__wrapper {
+        flex-direction: column;
+    }
+
+    .offers__item {
+        width: 100%;
+    }
+
+    .offers__item_btn {
+        margin-top: 40px;
+    }
+}

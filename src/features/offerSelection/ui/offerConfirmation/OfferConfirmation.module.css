@@ -24,3 +24,20 @@
     text-align: center;
     color: #4f5665;
 }
+
+@media (max-width: 919px) {
+    .offer__confirm_title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 599px) {
+    .offer__confirm {
+        margin-top: 30px;
+        padding: 20px 16px;
+    }
+
+    .offer__confirm_title {
+        font-size: 20px;
+    }
+}

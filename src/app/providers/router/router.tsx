@@ -35,7 +35,6 @@ export const router = createBrowserRouter([
                 path: 'loan/:applicationId/document',
                 element: <DocumentPage />,
             },
-            // СМЕНИТЬ РОУТЫ ВНИЗУ ПО АНАЛОГИИ ДЛЯ С ДОКУМЕНТСПЕЙДЖ + СДЕЛАТЬ LOCALSTORAGE Для сохранения шагов
             {
                 path: 'loan/:applicationId/document/sign',
                 element: <SignPage />,

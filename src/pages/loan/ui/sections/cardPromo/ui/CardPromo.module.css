@@ -149,6 +149,12 @@
     .conditions__item_text {
         font-size: 12px;
     }
+
+    .conditions__item_tooltip {
+        width: 140px;
+        left: -10px;
+        bottom: -45px;
+    }
 }
 
 @media (max-width: 499px) {
@@ -170,5 +176,12 @@
 
     .conditions__item_text {
         font-size: 12px;
+    }
+
+    .conditions__item_tooltip {
+        width: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -40px;
     }
 }

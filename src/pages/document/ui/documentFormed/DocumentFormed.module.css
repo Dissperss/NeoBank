@@ -21,3 +21,23 @@
     text-align: center;
     color: #4f5665;
 }
+
+@media (max-width: 919px) {
+    .docs__formed {
+        padding-top: 60px;
+    }
+
+    .docs__formed_title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 599px) {
+    .docs__formed {
+        padding-top: 40px;
+    }
+
+    .docs__formed_title {
+        font-size: 20px;
+    }
+}

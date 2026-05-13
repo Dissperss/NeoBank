@@ -7,3 +7,15 @@
     margin-top: 20px;
     color: red;
 }
+
+@media (max-width: 919px) {
+    .code__wrapper {
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 599px) {
+    .code__wrapper {
+        padding-top: 40px;
+    }
+}

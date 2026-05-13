@@ -34,7 +34,6 @@ export const ScoringForm = () => {
         register,
         formState: { errors, touchedFields, isSubmitting },
         handleSubmit,
-        reset,
     } = useForm<ScoringFormData>({
         mode: 'onBlur',
         resolver: zodResolver(scoringValidationShema),

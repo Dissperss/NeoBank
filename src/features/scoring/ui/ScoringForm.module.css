@@ -71,3 +71,57 @@
     margin-left: auto;
     display: block;
 }
+
+@media (max-width: 919px) {
+    .scoring__form_employment {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .scoring__form_header {
+        gap: 40px;
+    }
+
+    .scoring__form_title {
+        font-size: 24px;
+    }
+
+    .scoring__form_personal {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form__personal_fields:nth-child(1),
+    .form__personal_fields:nth-child(2),
+    .form__personal_fields:nth-child(3),
+    .form__personal_fields:nth-child(4) {
+        grid-column: auto;
+    }
+
+    .form__personal_fields:nth-child(5) {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 599px) {
+    .scoring__form_header {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+
+    .scoring__form_title {
+        font-size: 20px;
+    }
+
+    .scoring__form_personal {
+        grid-template-columns: 1fr;
+    }
+
+    .scoring__form_employment {
+        grid-template-columns: 1fr;
+    }
+
+    .scoring__form_btn {
+        width: 100%;
+        margin-left: 0;
+    }
+}

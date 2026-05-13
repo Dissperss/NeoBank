@@ -20,3 +20,23 @@
     text-align: center;
     color: #4f5665;
 }
+
+@media (max-width: 919px) {
+    .scoring__decision {
+        margin-top: 60px;
+    }
+
+    .scoring__decision_title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 599px) {
+    .scoring__decision {
+        margin-top: 40px;
+    }
+
+    .scoring__decision_title {
+        font-size: 20px;
+    }
+}
