@@ -15,11 +15,11 @@ export const ScoringPage = () => {
     const currentStep = useApplicationStore((state) => state.currentStep)
     const steps = Object.values(STEP_VALUES)
 
-    // useEffect(() => {
-    //     if (Number(applicationId) !== storeId) {
-    //         navigate('/loan')
-    //     }
-    // }, [applicationId, storeId, navigate])
+    useEffect(() => {
+        if (Number(applicationId) !== storeId) {
+            navigate('/loan')
+        }
+    }, [applicationId, storeId, navigate])
 
     return (
         <Container>
