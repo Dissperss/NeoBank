@@ -136,168 +136,189 @@ export const PaymentSchedule = () => {
                                             5
                                         </p>
                                     </header>
-                                    <table className={styles.payment__table}>
-                                        <thead
-                                            className={
-                                                styles.payment__table_header
-                                            }
+                                    <div
+                                        className={
+                                            styles.payment__table_wrapper
+                                        }
+                                    >
+                                        <table
+                                            className={styles.payment__table}
                                         >
-                                            <tr
+                                            <thead
                                                 className={
-                                                    styles.table__header__title
+                                                    styles.payment__table_header
                                                 }
                                             >
-                                                <th>
-                                                    <TableTitle
-                                                        onClick={() =>
-                                                            handleSort('number')
-                                                        }
-                                                        sortDirection={
-                                                            sortField ===
-                                                            'number'
-                                                                ? sortDir
-                                                                : null
-                                                        }
-                                                        titleText="number"
-                                                    />
-                                                </th>
-                                                <th>
-                                                    <TableTitle
-                                                        onClick={() =>
-                                                            handleSort('date')
-                                                        }
-                                                        sortDirection={
-                                                            sortField === 'date'
-                                                                ? sortDir
-                                                                : null
-                                                        }
-                                                        titleText="date"
-                                                    />
-                                                </th>
-                                                <th>
-                                                    <TableTitle
-                                                        onClick={() =>
-                                                            handleSort(
-                                                                'totalPayment',
-                                                            )
-                                                        }
-                                                        sortDirection={
-                                                            sortField ===
-                                                            'totalPayment'
-                                                                ? sortDir
-                                                                : null
-                                                        }
-                                                        titleText="total payment"
-                                                    />
-                                                </th>
-                                                <th>
-                                                    <TableTitle
-                                                        onClick={() =>
-                                                            handleSort(
-                                                                'interestPayment',
-                                                            )
-                                                        }
-                                                        sortDirection={
-                                                            sortField ===
-                                                            'interestPayment'
-                                                                ? sortDir
-                                                                : null
-                                                        }
-                                                        titleText="interest payment"
-                                                    />
-                                                </th>
-                                                <th>
-                                                    <TableTitle
-                                                        onClick={() =>
-                                                            handleSort(
-                                                                'debtPayment',
-                                                            )
-                                                        }
-                                                        sortDirection={
-                                                            sortField ===
-                                                            'debtPayment'
-                                                                ? sortDir
-                                                                : null
-                                                        }
-                                                        titleText="debt payment"
-                                                    />
-                                                </th>
-                                                <th>
-                                                    <TableTitle
-                                                        onClick={() =>
-                                                            handleSort(
-                                                                'remainingDebt',
-                                                            )
-                                                        }
-                                                        sortDirection={
-                                                            sortField ===
-                                                            'remainingDebt'
-                                                                ? sortDir
-                                                                : null
-                                                        }
-                                                        titleText="remaining debt"
-                                                    />
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody
-                                            className={
-                                                styles.payment__table_inner
-                                            }
-                                        >
-                                            {sortedData.map((item) => (
                                                 <tr
-                                                    key={item.number}
                                                     className={
-                                                        styles.payment__table_row
+                                                        styles.table__header__title
                                                     }
                                                 >
-                                                    <td
-                                                        className={
-                                                            styles.payment__table_value
-                                                        }
-                                                    >
-                                                        {item.number}
-                                                    </td>
-                                                    <td
-                                                        className={
-                                                            styles.payment__table_value
-                                                        }
-                                                    >
-                                                        {item.date}
-                                                    </td>
-                                                    <td
-                                                        className={
-                                                            styles.payment__table_value
-                                                        }
-                                                    >
-                                                        {item.totalPayment}
-                                                    </td>
-                                                    <td
-                                                        className={
-                                                            styles.payment__table_value
-                                                        }
-                                                    >
-                                                        {item.interestPayment}
-                                                    </td>
-                                                    <td
-                                                        className={
-                                                            styles.payment__table_value
-                                                        }
-                                                    >
-                                                        {item.debtPayment}
-                                                    </td>
-                                                    <td
-                                                        className={
-                                                            styles.payment__table_value
-                                                        }
-                                                    >
-                                                        {item.remainingDebt}
-                                                    </td>
+                                                    <th>
+                                                        <TableTitle
+                                                            onClick={() =>
+                                                                handleSort(
+                                                                    'number',
+                                                                )
+                                                            }
+                                                            sortDirection={
+                                                                sortField ===
+                                                                'number'
+                                                                    ? sortDir
+                                                                    : null
+                                                            }
+                                                            titleText="number"
+                                                        />
+                                                    </th>
+                                                    <th>
+                                                        <TableTitle
+                                                            onClick={() =>
+                                                                handleSort(
+                                                                    'date',
+                                                                )
+                                                            }
+                                                            sortDirection={
+                                                                sortField ===
+                                                                'date'
+                                                                    ? sortDir
+                                                                    : null
+                                                            }
+                                                            titleText="date"
+                                                        />
+                                                    </th>
+                                                    <th>
+                                                        <TableTitle
+                                                            onClick={() =>
+                                                                handleSort(
+                                                                    'totalPayment',
+                                                                )
+                                                            }
+                                                            sortDirection={
+                                                                sortField ===
+                                                                'totalPayment'
+                                                                    ? sortDir
+                                                                    : null
+                                                            }
+                                                            titleText="total payment"
+                                                        />
+                                                    </th>
+                                                    <th>
+                                                        <TableTitle
+                                                            onClick={() =>
+                                                                handleSort(
+                                                                    'interestPayment',
+                                                                )
+                                                            }
+                                                            sortDirection={
+                                                                sortField ===
+                                                                'interestPayment'
+                                                                    ? sortDir
+                                                                    : null
+                                                            }
+                                                            titleText="interest payment"
+                                                        />
+                                                    </th>
+                                                    <th>
+                                                        <TableTitle
+                                                            onClick={() =>
+                                                                handleSort(
+                                                                    'debtPayment',
+                                                                )
+                                                            }
+                                                            sortDirection={
+                                                                sortField ===
+                                                                'debtPayment'
+                                                                    ? sortDir
+                                                                    : null
+                                                            }
+                                                            titleText="debt payment"
+                                                        />
+                                                    </th>
+                                                    <th>
+                                                        <TableTitle
+                                                            onClick={() =>
+                                                                handleSort(
+                                                                    'remainingDebt',
+                                                                )
+                                                            }
+                                                            sortDirection={
+                                                                sortField ===
+                                                                'remainingDebt'
+                                                                    ? sortDir
+                                                                    : null
+                                                            }
+                                                            titleText="remaining debt"
+                                                        />
+                                                    </th>
                                                 </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
+                                            </thead>
+                                            <tbody
+                                                className={
+                                                    styles.payment__table_inner
+                                                }
+                                            >
+                                                {sortedData.map((item) => (
+                                                    <tr
+                                                        key={item.number}
+                                                        className={
+                                                            styles.payment__table_row
+                                                        }
+                                                    >
+                                                        <td
+                                                            className={
+                                                                styles.payment__table_value
+                                                            }
+                                                            data-label="№:"
+                                                        >
+                                                            {item.number}
+                                                        </td>
+                                                        <td
+                                                            className={
+                                                                styles.payment__table_value
+                                                            }
+                                                            data-label="Date:"
+                                                        >
+                                                            {item.date}
+                                                        </td>
+                                                        <td
+                                                            className={
+                                                                styles.payment__table_value
+                                                            }
+                                                            data-label="Total:"
+                                                        >
+                                                            {item.totalPayment}
+                                                        </td>
+                                                        <td
+                                                            className={
+                                                                styles.payment__table_value
+                                                            }
+                                                            data-label="Interest:"
+                                                        >
+                                                            {
+                                                                item.interestPayment
+                                                            }
+                                                        </td>
+                                                        <td
+                                                            className={
+                                                                styles.payment__table_value
+                                                            }
+                                                            data-label="Debt:"
+                                                        >
+                                                            {item.debtPayment}
+                                                        </td>
+                                                        <td
+                                                            className={
+                                                                styles.payment__table_value
+                                                            }
+                                                            data-label="Remaining:"
+                                                        >
+                                                            {item.remainingDebt}
+                                                        </td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
                                     <div className={styles.payment__footer}>
                                         <Button
                                             onClick={() => setIsModalOpen(true)}
