@@ -66,21 +66,22 @@ export const CodeInput = ({ onCodeSubmit }: CodeInputProps) => {
     return (
         <div className={styles.input__block}>
             {code.map((digit, index) => (
-                <input
-                    key={index}
-                    className={styles.input}
-                    ref={(el) => {
-                        inputsRef.current[index] = el
-                    }}
-                    value={digit}
-                    onChange={(e) => handleChange(index, e.target.value)}
-                    onKeyDown={(e) => handleKeydown(index, e)}
-                    onPaste={handlePaste}
-                    type="text"
-                    inputMode="numeric"
-                    maxLength={1}
-                    placeholder="○"
-                />
+                    <input
+                        key={index}
+                        className={styles.input}
+                        ref={(el) => {
+                            inputsRef.current[index] = el
+                        }}
+                        value={digit}
+                        onChange={(e) => handleChange(index, e.target.value)}
+                        onKeyDown={(e) => handleKeydown(index, e)}
+                        onPaste={handlePaste}
+                        type="text"
+                        inputMode="numeric"
+                        maxLength={1}
+                        placeholder="○"
+                        data-testid={`code-input-${index}`}
+                    />
             ))}
         </div>
     )
