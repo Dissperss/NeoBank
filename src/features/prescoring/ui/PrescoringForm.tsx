@@ -27,7 +27,6 @@ export const PrescoringForm = () => {
     )
     const setStep = useApplicationStore((state) => state.setStep)
     const setOffers = useApplicationStore((state) => state.setOffers)
-    const currentStep = useApplicationStore((state) => state.currentStep)
     const {
         register,
         formState: { errors, touchedFields, isSubmitting },

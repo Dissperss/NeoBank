@@ -2,7 +2,7 @@ import { scoringValidationShema } from '@/entities/scoring/model/scoringValidati
 import { FormWrapper } from '@/shared/ui/form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import styles from './ScoringForm.module.css'
 import {
     scoringEmploymentFieldsConfig,
