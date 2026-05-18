@@ -1,0 +1,1 @@
+export { ModalDeny } from './ModalDeny'

@@ -5,7 +5,6 @@ import { Loader } from '@/shared/ui/loader'
 import styles from './Rates.module.css'
 import { type DisplayRate } from '../../types/currency'
 
-
 interface RatesProps {
     isLoading: boolean
     errorText: string | null
@@ -24,7 +23,7 @@ export const Rates = ({
     }
 
     if (errorText) {
-        return <ErrorMessage onRetry={fetchRates} />
+        return <ErrorMessage message={errorText} onRetry={fetchRates} />
     }
 
     return (

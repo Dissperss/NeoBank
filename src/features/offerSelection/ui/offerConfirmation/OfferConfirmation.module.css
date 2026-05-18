@@ -1,0 +1,43 @@
+.offer__confirm {
+    margin-top: 50px;
+    padding: 30px 0;
+    background: rgba(217, 217, 217, 0);
+    border: 1px solid #5b35d5;
+    border-radius: 10px;
+}
+
+.offer__confirm_title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 112%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #1c1c1e;
+}
+
+.offer__confirm_text {
+    margin-top: 32px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 112%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #4f5665;
+}
+
+@media (max-width: 919px) {
+    .offer__confirm_title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 599px) {
+    .offer__confirm {
+        margin-top: 30px;
+        padding: 20px 16px;
+    }
+
+    .offer__confirm_title {
+        font-size: 20px;
+    }
+}

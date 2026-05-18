@@ -1,0 +1,26 @@
+.table__title_content {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding-bottom: 9px;
+}
+
+.table__title_text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: normal;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #4a5568;
+}
+
+.table__title_btn {
+    background: none;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.title_btn_rotate {
+    transform: rotate(180deg);
+}

@@ -1,0 +1,127 @@
+.scoring__form_header {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.scoring__form_title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 100%;
+    color: #000;
+}
+
+.scoring__form_text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: #000;
+}
+
+.scoring__form {
+    margin-top: 40px;
+}
+
+/* Personal */
+
+.scoring__form_personal {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+}
+
+.form__personal_fields:nth-child(1) {
+    grid-column: 1 / 3;
+}
+.form__personal_fields:nth-child(2) {
+    grid-column: 3 / 5;
+}
+
+.form__personal_fields:nth-child(3) {
+    grid-column: 5 / 7;
+}
+
+.form__personal_fields:nth-child(4) {
+    grid-column: 1 / 4;
+}
+
+.form__personal_fields:nth-child(5) {
+    grid-column: 4 / 7;
+}
+
+/* Employment */
+
+.form__employment_title {
+    margin-top: 32px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    color: #000;
+}
+
+.scoring__form_employment {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.scoring__form_btn {
+    margin-top: 20px;
+    margin-left: auto;
+    display: block;
+}
+
+@media (max-width: 919px) {
+    .scoring__form_employment {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .scoring__form_header {
+        gap: 40px;
+    }
+
+    .scoring__form_title {
+        font-size: 24px;
+    }
+
+    .scoring__form_personal {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form__personal_fields:nth-child(1),
+    .form__personal_fields:nth-child(2),
+    .form__personal_fields:nth-child(3),
+    .form__personal_fields:nth-child(4) {
+        grid-column: auto;
+    }
+
+    .form__personal_fields:nth-child(5) {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 599px) {
+    .scoring__form_header {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+
+    .scoring__form_title {
+        font-size: 20px;
+    }
+
+    .scoring__form_personal {
+        grid-template-columns: 1fr;
+    }
+
+    .scoring__form_employment {
+        grid-template-columns: 1fr;
+    }
+
+    .scoring__form_btn {
+        width: 100%;
+        margin-left: 0;
+    }
+}

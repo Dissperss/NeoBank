@@ -1,0 +1,42 @@
+.scoring__decision {
+    margin-top: 100px;
+}
+
+.scoring__decision_title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 112%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #1c1c1e;
+}
+
+.scoring__decision_text {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 112%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #4f5665;
+}
+
+@media (max-width: 919px) {
+    .scoring__decision {
+        margin-top: 60px;
+    }
+
+    .scoring__decision_title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 599px) {
+    .scoring__decision {
+        margin-top: 40px;
+    }
+
+    .scoring__decision_title {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,1 @@
+export { DocumentFormed } from './DocumentFormed'

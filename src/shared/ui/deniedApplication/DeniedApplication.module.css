@@ -1,0 +1,24 @@
+.denied__application_title {
+    text-align: center;
+}
+
+.denied__application_text {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.denied__application_btn {
+    display: block;
+    margin: 20px auto 0 auto;
+}
+
+@media (max-width: 599px) {
+    .denied__application_title {
+        font-size: 20px;
+    }
+
+    .denied__application_btn {
+        width: 100%;
+        max-width: 100%;
+    }
+}

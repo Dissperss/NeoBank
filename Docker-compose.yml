@@ -65,6 +65,7 @@ services:
             KAFKA_ADVERTISED_HOST_NAME: kafka
             KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
             KAFKA_CREATE_TOPICS: 'conveyor-finish-registration:1:1'
+            KAFKA_HEAP_OPTS: '-Xmx512M -Xms256M'
 
     audit-db:
         image: redis:6.2-alpine

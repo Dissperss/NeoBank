@@ -1,0 +1,1 @@
+export { SignDocsConfirm } from './SignDocsConfirm'

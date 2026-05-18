@@ -6,7 +6,6 @@ import { FormInput } from '@/shared/ui/formComponents/formInput'
 import { fieldsConfig } from '../config/fieldsConfig'
 import { FormSelect } from '@/shared/ui/formComponents/formSelect'
 
-import styles from './PrescoringForm.module.css'
 import { AmountControlResult } from './amountControlResult'
 import { Button } from '@/shared/ui/button'
 import { validationShema } from '../model/validationShema'
@@ -14,13 +13,25 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import type { FormData } from '../types/formData'
 import { Loader } from '@/shared/ui/loader'
 import { sendCreditCardData } from '@/shared/api/form'
+import { useApplicationStore } from '@/entities/application/model/applicationStore'
+import { useNavigate } from 'react-router-dom'
+import styles from './PrescoringForm.module.css'
+import { OFFER_API_PREFIX } from '@/shared/config/common'
+import { STEP_VALUES } from '@/entities/application/types/enums'
+import { STEP_NUMBERS } from '@/entities/application/lib/stepDisplay'
 
 export const PrescoringForm = () => {
+    const navigate = useNavigate()
+    const setApplicationId = useApplicationStore(
+        (state) => state.setApplicationId,
+    )
+    const setStep = useApplicationStore((state) => state.setStep)
+    const setOffers = useApplicationStore((state) => state.setOffers)
+    const currentStep = useApplicationStore((state) => state.currentStep)
     const {
         register,
         formState: { errors, touchedFields, isSubmitting },
         handleSubmit,
-        reset,
         control,
     } = useForm<FormData>({
         mode: 'onBlur',
@@ -34,11 +45,10 @@ export const PrescoringForm = () => {
     const onSubmit = async (data: FormData) => {
         try {
             const response = await sendCreditCardData(data)
-            localStorage.setItem(
-                'loanApplicationId',
-                String(response.applicationId),
-            )
-            reset()
+            setApplicationId(response.applicationId)
+            setStep(STEP_VALUES.OFFERS)
+            setOffers(response.offers)
+            navigate(`/loan/${response.applicationId}/${OFFER_API_PREFIX}`)
         } catch (e) {
             console.error(e)
         }
@@ -52,7 +62,9 @@ export const PrescoringForm = () => {
                         <h3 className={styles.block__header_title}>
                             Customize your card
                         </h3>
-                        <p className={styles.block__header_step}>Step 1 of 5</p>
+                        <p className={styles.block__header_step}>
+                            Step {STEP_NUMBERS[STEP_VALUES.PRESCORING]} of 5
+                        </p>
                     </div>
                     <div className={styles.card__block_slider}>
                         <Controller
@@ -151,13 +163,17 @@ export const PrescoringForm = () => {
                         )
                     })}
                 </div>
-                <Button
-                    className={styles.contact__form_btn}
-                    type="submit"
-                    disabled={isSubmitting}
-                >
-                    {isSubmitting ? <Loader /> : 'Continue'}
-                </Button>
+                {isSubmitting ? (
+                    <Loader />
+                ) : (
+                    <Button
+                        className={styles.contact__form_btn}
+                        type="submit"
+                        disabled={isSubmitting}
+                    >
+                        Continue
+                    </Button>
+                )}
             </form>
         </FormWrapper>
     )

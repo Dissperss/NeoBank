@@ -5,7 +5,7 @@ type FormSelectProps = {
     registration: UseFormRegisterReturn
     id: string
     options?: {
-        value: number
+        value: number | string
         label: string
     }[]
     touched?: boolean

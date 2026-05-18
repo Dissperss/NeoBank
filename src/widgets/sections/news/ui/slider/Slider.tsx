@@ -27,7 +27,7 @@ export const Slider = ({
     }
 
     if (errorText) {
-        return <ErrorMessage onRetry={fetchNews} />
+        return <ErrorMessage message={errorText} onRetry={fetchNews} />
     }
 
     const firstSlideRef = useRef<HTMLLIElement>(null)

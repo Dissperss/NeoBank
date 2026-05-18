@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom'
+import { Container } from '@/shared/ui/container'
 import { Button } from '@/shared/ui/button'
 import err from '@/shared/assets/images/notFoundPage/404.png'
 import styles from './NotFoundPage.module.css'
-import { Container } from '@/shared/ui/container'
 
 export const NotFoundPage = () => {
     const navigate = useNavigate()
