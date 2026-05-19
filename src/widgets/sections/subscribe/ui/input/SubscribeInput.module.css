@@ -7,8 +7,8 @@
 
 .subscribe__form_input {
     font-family: var(--third-family);
-    font-weight: 400;
-    font-size: 20px;
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-lg);
     line-height: 147%;
     text-align: left;
     letter-spacing: 0.02em;
@@ -20,7 +20,7 @@
 
 .subscribe__form_input::placeholder {
     color: #c0c2d6;
-    font-size: 16px;
+    font-size: var(--font-size-base);
 }
 
 .subscribe__form_input:focus {
@@ -34,17 +34,17 @@
 
     .subscribe__form_input {
         width: 100%;
-        font-size: 16px;
+        font-size: var(--font-size-base);
     }
 }
 
 @media (max-width: 499px) {
     .subscribe__form_input {
-        font-size: 14px;
+        font-size: var(--font-size-sm);
         text-align: center;
     }
 
     .subscribe__form_input::placeholder {
-        font-size: 14px;
+        font-size: var(--font-size-sm);
     }
 }

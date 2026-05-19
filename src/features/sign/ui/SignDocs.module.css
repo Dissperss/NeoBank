@@ -9,27 +9,27 @@
 }
 
 .sign__docs_title {
-    font-weight: 700;
-    font-size: 30px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h2);
     line-height: 112%;
     text-align: center;
-    color: #1c1c1e;
+    color: var(--color-dark-text);
 }
 
 .sign__docs_step {
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
     line-height: 112%;
     text-align: center;
-    color: #000;
+    color: var(--color-black);
 }
 
 .sign__docs_text {
     margin-top: 32px;
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-lg);
     line-height: 112%;
-    color: #4f5665;
+    color: var(--color-gray-text);
 }
 
 .sign__docs_link {
@@ -40,10 +40,10 @@
 }
 
 .docs__link_text {
-    font-weight: 500;
-    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-md);
     line-height: 112%;
-    color: #000;
+    color: var(--color-black);
 }
 
 .sign__docs_footer {
@@ -73,11 +73,11 @@
     }
 
     .sign__docs_title {
-        font-size: 24px;
+        font-size: var(--font-size-h3);
     }
 
     .sign__docs_text {
-        font-size: 18px;
+        font-size: var(--font-size-md);
     }
 }
 
@@ -93,11 +93,11 @@
     }
 
     .sign__docs_title {
-        font-size: 20px;
+        font-size: var(--font-size-lg);
     }
 
     .sign__docs_text {
-        font-size: 16px;
+        font-size: var(--font-size-base);
     }
 
     .sign__docs_footer {

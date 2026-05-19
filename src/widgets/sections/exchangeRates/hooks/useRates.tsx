@@ -27,7 +27,7 @@ export const useRates = () => {
             setRates(filtered)
             setLastUpdate(new Date())
         } catch (error) {
-            setErrorText('Не удалось загрузить курсы')
+            setErrorText('Failed to load rates')
             setRates(null)
         } finally {
             setIsLoading(false)

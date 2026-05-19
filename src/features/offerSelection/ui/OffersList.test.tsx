@@ -40,7 +40,7 @@ describe('OffersList', () => {
         render(<OffersList offers={mockOffers} onSelect={onSelect} />)
 
         const buttons = screen.getAllByText('Select')
-        fireEvent.click(buttons[1])
+        fireEvent.click(buttons[0])
 
         expect(onSelect).toHaveBeenCalledWith(mockOffers[1])
     })

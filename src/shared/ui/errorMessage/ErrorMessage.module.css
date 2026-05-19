@@ -4,7 +4,7 @@
 
 .error__text {
     text-align: center;
-    font-size: 20px;
+    font-size: var(--font-size-lg);
     color: red;
 }
 
@@ -16,7 +16,7 @@
 
 @media (max-width: 599px) {
     .error__text {
-        font-size: 16px;
+        font-size: var(--font-size-base);
     }
 
     .error__btn {

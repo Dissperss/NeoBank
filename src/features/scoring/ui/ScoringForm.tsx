@@ -40,10 +40,11 @@ export const ScoringForm = () => {
     })
 
     const onSubmit = async (data: ScoringFormData) => {
+        if (!applicationId) return
         setError(null)
         setLoading(true)
         try {
-            const res = await submitScoring(Number(applicationId), data)
+            await submitScoring(Number(applicationId), data)
             setLoading(false)
             setStep(STEP_VALUES.DOCUMENTS)
             setMaxReachedStep(STEP_VALUES.DOCUMENTS)

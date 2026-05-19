@@ -17,6 +17,7 @@ export const SignDocs = () => {
     const [isDocumentsSent, setIsDocumentsSent] = useState(false)
     const currentStep = useApplicationStore((state) => state.currentStep)
     const setStep = useApplicationStore((state) => state.setStep)
+    const setError = useApplicationStore((state) => state.setError)
     const setMaxReachedStep = useApplicationStore(
         (state) => state.setMaxReachedStep,
     )
@@ -27,7 +28,9 @@ export const SignDocs = () => {
     }, [])
 
     const handleSend = async () => {
-        if (!isChecked) return
+        if (!isChecked || !applicationId) return
+
+        setError(null)
         try {
             await signDocument(Number(applicationId))
             setIsDocumentsSent(true)
@@ -35,6 +38,7 @@ export const SignDocs = () => {
             setMaxReachedStep(STEP_VALUES.CODE)
         } catch (error) {
             console.error(error)
+            setError('Failed to send documents')
         }
     }
 

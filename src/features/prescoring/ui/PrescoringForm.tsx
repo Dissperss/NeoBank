@@ -27,6 +27,7 @@ export const PrescoringForm = () => {
     )
     const setStep = useApplicationStore((state) => state.setStep)
     const setOffers = useApplicationStore((state) => state.setOffers)
+    const setError = useApplicationStore((state) => state.setError)
     const {
         register,
         formState: { errors, touchedFields, isSubmitting },
@@ -42,6 +43,7 @@ export const PrescoringForm = () => {
     })
 
     const onSubmit = async (data: FormData) => {
+        setError(null)
         try {
             const response = await sendCreditCardData(data)
             setApplicationId(response.applicationId)
@@ -50,6 +52,7 @@ export const PrescoringForm = () => {
             navigate(`/loan/${response.applicationId}/${OFFER_API_PREFIX}`)
         } catch (e) {
             console.error(e)
+            setError('Failed to send application')
         }
     }
 

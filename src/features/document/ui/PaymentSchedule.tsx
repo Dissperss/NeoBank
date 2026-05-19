@@ -1,4 +1,4 @@
-import { confirmDocument, getPaymentSсhedule } from '@/shared/api/document'
+import { confirmDocument, getPaymentSchedule } from '@/shared/api/document'
 import { Container } from '@/shared/ui/container'
 import { useEffect, useMemo, useState } from 'react'
 import { useParams } from 'react-router-dom'
@@ -36,9 +36,11 @@ export const PaymentSchedule = () => {
 
     useEffect(() => {
         const getData = async () => {
+            if (!applicationId) return
+            setError(null)
             try {
                 const { paymentSchedule, status: appStatus } =
-                    await getPaymentSсhedule(Number(applicationId))
+                    await getPaymentSchedule(Number(applicationId))
 
                 setPaymentData(paymentSchedule)
                 setStatus(appStatus)
@@ -46,6 +48,7 @@ export const PaymentSchedule = () => {
                 setMaxReachedStep(STEP_VALUES.DOCUMENTS)
             } catch (error) {
                 console.error(error)
+                setError('Failed to get payment schedule data')
                 setPaymentData([])
             }
         }

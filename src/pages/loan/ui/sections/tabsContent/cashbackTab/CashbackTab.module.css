@@ -17,18 +17,18 @@
 }
 
 .list__item_title {
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
     line-height: 147%;
     color: rgba(67, 67, 67, 0.9);
 }
 
 .list__item_percent {
     margin-top: 22px;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     font-size: 36px;
     line-height: 147%;
-    color: #000;
+    color: var(--color-black);
 }
 
 .cashback__list_item:nth-child(4) .list__item_percent {
@@ -73,11 +73,11 @@
     }
 
     .list__item_title {
-        font-size: 14px;
+        font-size: var(--font-size-sm);
     }
 
     .list__item_percent {
-        font-size: 24px;
+        font-size: var(--font-size-h3);
     }
 
     .cashback__list_item {

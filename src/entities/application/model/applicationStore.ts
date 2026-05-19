@@ -122,11 +122,11 @@ export const useApplicationStore = create<
                         state?.applicationId &&
                         state?.currentStep === STEP_VALUES.PRESCORING
                     ) {
-                        getApplicationStatus(state.applicationId).then(
-                            (res) => {
+                        getApplicationStatus(state.applicationId)
+                            .then((res) => {
                                 state.setStatus(res.status as ApplicationStatus)
-                            },
-                        )
+                            })
+                            .catch((e) => console.error(e))
                     }
                 }
             },

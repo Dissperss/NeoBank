@@ -3,19 +3,19 @@
 }
 
 .map__title {
-    font-weight: 500;
-    font-size: 30px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-h2);
     line-height: 167%;
     text-align: center;
     color: #1c1c1c;
 }
 
 .map__subtitle {
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
     line-height: 313%;
     text-align: center;
-    color: #1c1c1e;
+    color: var(--color-dark-text);
 }
 
 .map__img {
@@ -31,11 +31,11 @@
     }
 
     .map__title {
-        font-size: 24px;
+        font-size: var(--font-size-h3);
     }
 
     .map__subtitle {
-        font-size: 14px;
+        font-size: var(--font-size-sm);
     }
 
     .map__img {
@@ -45,12 +45,12 @@
 
 @media (max-width: 499px) {
     .map__title {
-        font-size: 20px;
+        font-size: var(--font-size-lg);
         line-height: 140%;
     }
 
     .map__subtitle {
-        font-size: 13px;
+        font-size: var(--font-size-xs);
     }
 
     .map__img {

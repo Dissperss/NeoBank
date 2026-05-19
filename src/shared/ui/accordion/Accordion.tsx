@@ -10,13 +10,13 @@ type AccordionProps = {
 
 export const Accordion = ({ items, allowMultiple }: AccordionProps) => {
     const [openId, setOpenId] = useState<string | null>(null)
-    const [openBloks, setOpenBloks] = useState<string[]>([])
+    const [openBlokcs, setOpenBlokcs] = useState<string[]>([])
 
     return (
         <ul className={styles.accordion__list}>
             {items.map((item) => {
                 const isOpen = allowMultiple
-                    ? openBloks.includes(item.id)
+                    ? openBlokcs.includes(item.id)
                     : openId === item.id
                 return (
                     <li className={styles.accordion__list_item} key={item.id}>
@@ -34,7 +34,7 @@ export const Accordion = ({ items, allowMultiple }: AccordionProps) => {
                                             openId === item.id ? null : item.id,
                                         )
                                     } else {
-                                        setOpenBloks((prev) =>
+                                        setOpenBlokcs((prev) =>
                                             prev.includes(item.id)
                                                 ? prev.filter(
                                                       (id) => id !== item.id,
@@ -50,7 +50,7 @@ export const Accordion = ({ items, allowMultiple }: AccordionProps) => {
                             </button>
                         </div>
                         {(allowMultiple
-                            ? openBloks.includes(item.id)
+                            ? openBlokcs.includes(item.id)
                             : openId === item.id) && (
                             <span className={styles.list__item_text}>
                                 {item.answer}

@@ -207,12 +207,36 @@ src/
 | POST | `/document/{id}/sign` | Подписать документы |
 | POST | `/document/{id}/sign/code` | Подтвердить код |
 
+## Testing
+
+```bash
+# Run all tests
+npm test
+
+# Run specific test file
+npx vitest run src/features/prescoring/ui/PrescoringForm.test.tsx
+
+# Watch mode
+npx vitest
+```
+
+- **Framework**: Vitest + @testing-library/react
+- **20 test files, 80 tests**
+- **Тестируемые компоненты**:
+  - Prescoring Form, Scoring Form, Offers List/Page
+  - Code Input/Confirm/Completed
+  - Sign Docs, Payment Schedule, DocumentFormed
+  - DeniedApplication, ModalDeny, ScoringDecision, OfferConfirmation
+  - Store, stepToRoute, AmountControlSlider/Result
+  - HomePage (интеграционные)
+
 ## Scripts
 
 | Command | Description |
 |---|---|
 | `npm run dev` | Start dev server |
 | `npm run build` | Build for production |
+| `npm run test` | Run all tests |
 | `npm run lint` | Run ESLint |
 | `npm run lint:fix` | Fix ESLint errors |
 | `npm run format` | Format with Prettier |

@@ -3,10 +3,10 @@
 }
 
 .amount__res_title {
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-lg);
     line-height: 100%;
-    color: #000;
+    color: var(--color-black);
 }
 
 .amount__res_block {
@@ -37,10 +37,10 @@
 .res__block_value,
 .res__block_currency {
     display: block;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
     line-height: 100%;
-    color: #000;
+    color: var(--color-black);
 }
 
 @media (max-width: 919px) {
@@ -51,7 +51,7 @@
     }
 
     .amount__res_title {
-        font-size: 18px;
+        font-size: var(--font-size-md);
     }
 
     .amount__res_block::after {
@@ -60,6 +60,6 @@
 
     .res__block_value,
     .res__block_currency {
-        font-size: 14px;
+        font-size: var(--font-size-sm);
     }
 }

@@ -1,5 +1,5 @@
 export {
-    getPaymentSсhedule,
+    getPaymentSchedule,
     confirmDocument,
     signDocument,
     verifyCode,

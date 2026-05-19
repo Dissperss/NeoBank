@@ -10,7 +10,7 @@
 }
 
 .form__select:focus {
-    border-color: #5b35d5;
+    border-color: var(--color-accent);
     outline: none;
 }
 

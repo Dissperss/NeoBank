@@ -9,7 +9,7 @@
 }
 
 .swapper__btn_right {
-    background-color: #003cff;
+    background-color: var(--color-primary-blue);
 }
 
 @media (max-width: 599px) {

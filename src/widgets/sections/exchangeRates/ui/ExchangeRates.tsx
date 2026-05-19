@@ -1,11 +1,12 @@
 import { Time } from '@/features/time/ui'
 import { Container } from '@/shared/ui/container'
 import { Section } from '@/shared/ui/section'
+import { ErrorMessage } from '@/shared/ui/errorMessage'
+import { Loader } from '@/shared/ui/loader'
 
 import { useRates } from '../hooks'
 import styles from './ExchangeRates.module.css'
 import { Rates } from './rates'
-
 
 export const ExchangeRates = () => {
     const { rates, isLoading, errorText, lastUpdate, fetchRates } = useRates()
@@ -23,12 +24,20 @@ export const ExchangeRates = () => {
                             dateTime={lastUpdate}
                         />
                     </header>
-                    <Rates
-                        rates={rates}
-                        isLoading={isLoading}
-                        errorText={errorText}
-                        fetchRates={fetchRates}
-                    />
+                    {isLoading ? (
+                        <div className={styles.currency__content}>
+                            <Loader />
+                        </div>
+                    ) : errorText ? (
+                        <div className={styles.currency__content}>
+                            <ErrorMessage
+                                message={errorText}
+                                onRetry={fetchRates}
+                            />
+                        </div>
+                    ) : (
+                        <Rates rates={rates} />
+                    )}
                 </div>
             </Container>
         </Section>

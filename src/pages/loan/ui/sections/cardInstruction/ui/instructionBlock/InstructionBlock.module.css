@@ -12,22 +12,22 @@
 }
 
 .block__header_step {
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-lg);
     line-height: 147%;
     text-align: center;
-    color: #000;
+    color: var(--color-black);
     background: #d9d9d9;
     border-radius: 50px;
     padding: 8px 16px;
 }
 
 .instruction__block_text {
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
     line-height: 147%;
     text-align: center;
-    color: #000;
+    color: var(--color-black);
     word-break: break-word;
 }
 
@@ -44,17 +44,17 @@
     }
 
     .instruction__block_text {
-        font-size: 14px;
+        font-size: var(--font-size-sm);
     }
 }
 
 @media (max-width: 599px) {
     .block__header_step {
-        font-size: 16px;
+        font-size: var(--font-size-base);
     }
 
     .instruction__block_text {
-        font-size: 13px;
+        font-size: var(--font-size-xs);
         text-align: left;
     }
 }

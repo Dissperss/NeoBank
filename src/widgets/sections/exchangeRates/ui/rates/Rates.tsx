@@ -1,31 +1,13 @@
 import BankIcon from '@/shared/assets/icons/exchange/bank_building.svg?react'
-import { ErrorMessage } from '@/shared/ui/errorMessage'
-import { Loader } from '@/shared/ui/loader'
 
 import styles from './Rates.module.css'
 import { type DisplayRate } from '../../types/currency'
 
 interface RatesProps {
-    isLoading: boolean
-    errorText: string | null
     rates: DisplayRate[] | null
-    fetchRates: () => Promise<void>
 }
 
-export const Rates = ({
-    isLoading,
-    errorText,
-    rates,
-    fetchRates,
-}: RatesProps) => {
-    if (isLoading) {
-        return <Loader />
-    }
-
-    if (errorText) {
-        return <ErrorMessage message={errorText} onRetry={fetchRates} />
-    }
-
+export const Rates = ({ rates }: RatesProps) => {
     return (
         <>
             <h4 className={styles.currency__subtitle}>Currency</h4>

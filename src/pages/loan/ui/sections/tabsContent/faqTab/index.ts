@@ -1,1 +1,1 @@
-export { Faqtab } from './Faqtab'
+export { FaqTab } from './Faqtab'

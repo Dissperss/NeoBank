@@ -5,17 +5,17 @@
 }
 
 .scoring__form_title {
-    font-weight: 700;
-    font-size: 30px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h2);
     line-height: 100%;
-    color: #000;
+    color: var(--color-black);
 }
 
 .scoring__form_text {
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
     line-height: 100%;
-    color: #000;
+    color: var(--color-black);
 }
 
 .scoring__form {
@@ -53,10 +53,10 @@
 
 .form__employment_title {
     margin-top: 32px;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-lg);
     line-height: 100%;
-    color: #000;
+    color: var(--color-black);
 }
 
 .scoring__form_employment {
@@ -82,7 +82,7 @@
     }
 
     .scoring__form_title {
-        font-size: 24px;
+        font-size: var(--font-size-h3);
     }
 
     .scoring__form_personal {
@@ -109,7 +109,7 @@
     }
 
     .scoring__form_title {
-        font-size: 20px;
+        font-size: var(--font-size-lg);
     }
 
     .scoring__form_personal {
