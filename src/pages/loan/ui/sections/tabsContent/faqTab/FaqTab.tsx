@@ -1,6 +1,7 @@
 import { issuingData, usingData } from '@/pages/loan/constants/faqData'
 import { Accordion } from '@/shared/ui/accordion'
 import { Section } from '@/shared/ui/section'
+import { Container } from '@/shared/ui/container'
 import styles from './FaqTab.module.css'
 
 export const FaqTab = () => {
