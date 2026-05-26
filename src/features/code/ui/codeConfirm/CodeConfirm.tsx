@@ -19,6 +19,7 @@ export const CodeConfirm = () => {
     )
 
     const handleCodeSubmit = async (code: string) => {
+        if (!applicationId) return
         try {
             setError(null)
             await verifyCode(Number(applicationId), Number(code))

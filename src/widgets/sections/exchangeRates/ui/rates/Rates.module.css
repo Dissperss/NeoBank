@@ -1,9 +1,9 @@
 .currency__subtitle {
     margin-top: 24px;
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-lg);
     line-height: 250%;
-    color: #000;
+    color: var(--color-black);
 }
 
 .currency__block {
@@ -36,33 +36,33 @@
 }
 
 .list__item_name {
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-lg);
     line-height: 112%;
     letter-spacing: 0.02em;
     color: #808080;
 }
 
 .list__item_value {
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-lg);
     line-height: 112%;
     letter-spacing: 0.02em;
-    color: #000;
+    color: var(--color-black);
 }
 
 .currency__link {
     margin-top: 35px;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-lg);
     line-height: 112%;
     letter-spacing: 0.02em;
-    color: #fff;
+    color: var(--color-white);
 }
 
 @media (max-width: 919px) {
     .currency__subtitle {
-        font-size: 18px;
+        font-size: var(--font-size-md);
         margin-top: 20px;
     }
 
@@ -77,11 +77,11 @@
 
     .list__item_name,
     .list__item_value {
-        font-size: 18px;
+        font-size: var(--font-size-md);
     }
 
     .currency__link {
-        font-size: 18px;
+        font-size: var(--font-size-md);
         margin-top: 28px;
     }
 }
@@ -107,7 +107,7 @@
 
 @media (max-width: 499px) {
     .currency__subtitle {
-        font-size: 16px;
+        font-size: var(--font-size-base);
         margin-top: 16px;
     }
 
@@ -117,11 +117,11 @@
 
     .list__item_name,
     .list__item_value {
-        font-size: 16px;
+        font-size: var(--font-size-base);
     }
 
     .currency__link {
-        font-size: 16px;
+        font-size: var(--font-size-base);
         margin-top: 24px;
     }
 }

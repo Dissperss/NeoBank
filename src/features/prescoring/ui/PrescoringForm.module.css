@@ -16,17 +16,17 @@
 }
 
 .block__header_title {
-    font-weight: 700;
-    font-size: 30px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h2);
     line-height: 100%;
-    color: #000;
+    color: var(--color-black);
 }
 
 .block__header_step {
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
     line-height: 100%;
-    color: #000;
+    color: var(--color-black);
 }
 
 /* Slider */
@@ -37,10 +37,10 @@
 
 .contact__info_title {
     margin-top: 30px;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-lg);
     line-height: 100%;
-    color: #000;
+    color: var(--color-black);
 }
 
 /* Form */
@@ -78,11 +78,11 @@
 
 @media (max-width: 919px) {
     .block__header_title {
-        font-size: 24px;
+        font-size: var(--font-size-h3);
     }
 
     .block__header_step {
-        font-size: 14px;
+        font-size: var(--font-size-sm);
     }
 
     .contact__form_inner {
@@ -92,7 +92,7 @@
 
 @media (max-width: 599px) {
     .block__header_title {
-        font-size: 20px;
+        font-size: var(--font-size-lg);
     }
 
     .contact__form_inner {

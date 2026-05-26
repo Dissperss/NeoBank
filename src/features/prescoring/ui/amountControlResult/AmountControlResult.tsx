@@ -13,7 +13,7 @@ export const AmountControlResult = ({
 }: AmountControlResultProps) => {
     return (
         <div className={styles.amount__res}>
-            <label className={styles.amount__res_title} htmlFor="">
+            <label className={styles.amount__res_title}>
                 You have chosen the amount
             </label>
             <div className={styles.amount__res_block}>

@@ -3,11 +3,11 @@
 }
 
 .card__instruction_title {
-    font-weight: 700;
-    font-size: 30px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h2);
     line-height: 147%;
     text-align: center;
-    color: #000;
+    color: var(--color-black);
 }
 
 .card__instruction_wrapper {
@@ -30,7 +30,7 @@
     }
 
     .card__instruction_title {
-        font-size: 24px;
+        font-size: var(--font-size-h3);
     }
 
     .card__instruction_wrapper {
@@ -41,6 +41,6 @@
 
 @media (max-width: 599px) {
     .card__instruction_title {
-        font-size: 20px;
+        font-size: var(--font-size-lg);
     }
 }

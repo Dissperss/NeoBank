@@ -18,9 +18,14 @@ export const MainLayout = () => {
     useEffect(() => {
         if (hasRedirected || !applicationId) return
 
-        const route = stepToRoute(currentStep, applicationId)
-        if (route && location.pathname !== route) {
-            navigate(route, { replace: true })
+        const isKnownRoute =
+            location.pathname === '/' || location.pathname.startsWith('/loan')
+
+        if (isKnownRoute) {
+            const route = stepToRoute(currentStep, applicationId)
+            if (route && location.pathname !== route) {
+                navigate(route, { replace: true })
+            }
         }
 
         setHasRedirected(true)

@@ -16,7 +16,7 @@
 }
 
 .form__input:focus {
-    border-color: #5b35d5;
+    border-color: var(--color-accent);
     outline: none;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .form__input_success {
-    border-color: #5b35d5;
+    border-color: var(--color-accent);
 }
 
 .input__error_icon,
@@ -38,7 +38,7 @@
     .form__input {
         padding: 10px;
         height: 44px;
-        font-size: 14px;
+        font-size: var(--font-size-sm);
     }
 
     .input__wrapper {

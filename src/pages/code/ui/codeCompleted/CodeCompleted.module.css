@@ -5,19 +5,19 @@
 
 .code__completed_title {
     margin-top: 32px;
-    font-weight: 700;
-    font-size: 30px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h2);
     line-height: 147%;
-    color: #1c1c1e;
+    color: var(--color-dark-text);
 }
 
 .code__completed_text {
     margin-top: 32px;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
     line-height: 147%;
     text-align: center;
-    color: #4f5665;
+    color: var(--color-gray-text);
 }
 
 .code__completed_btn {
@@ -27,7 +27,7 @@
 
 @media (max-width: 919px) {
     .code__completed_title {
-        font-size: 24px;
+        font-size: var(--font-size-h3);
     }
 }
 
@@ -37,7 +37,7 @@
     }
 
     .code__completed_title {
-        font-size: 20px;
+        font-size: var(--font-size-lg);
     }
 
     .code__completed_btn {

@@ -1,11 +1,11 @@
 .tab_btn {
     background: none;
     border: none;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
     line-height: 100%;
     letter-spacing: 0.02em;
-    color: #7b7454;
+    color: var(--color-tab-gold);
     position: relative;
     cursor: pointer;
     padding: 8px 0;
@@ -18,7 +18,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #7b7454;
+    background-color: var(--color-tab-gold);
     transition: width 0.3s ease;
 }
 
@@ -27,10 +27,10 @@
 }
 
 .tab_btn_active {
-    color: #7b7454;
+    color: var(--color-tab-gold);
 }
 
 .tab_btn_active::after {
     width: 100%;
-    background-color: #7b7454;
+    background-color: var(--color-tab-gold);
 }

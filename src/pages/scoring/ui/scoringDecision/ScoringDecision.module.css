@@ -3,22 +3,22 @@
 }
 
 .scoring__decision_title {
-    font-weight: 700;
-    font-size: 30px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h2);
     line-height: 112%;
     letter-spacing: 0.02em;
     text-align: center;
-    color: #1c1c1e;
+    color: var(--color-dark-text);
 }
 
 .scoring__decision_text {
     margin-top: 10px;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
     line-height: 112%;
     letter-spacing: 0.02em;
     text-align: center;
-    color: #4f5665;
+    color: var(--color-gray-text);
 }
 
 @media (max-width: 919px) {
@@ -27,7 +27,7 @@
     }
 
     .scoring__decision_title {
-        font-size: 24px;
+        font-size: var(--font-size-h3);
     }
 }
 
@@ -37,6 +37,6 @@
     }
 
     .scoring__decision_title {
-        font-size: 20px;
+        font-size: var(--font-size-lg);
     }
 }

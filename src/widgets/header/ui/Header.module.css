@@ -9,8 +9,8 @@
 }
 
 .header__title {
-    font-weight: 700;
-    font-size: 24px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h3);
     line-height: 112%;
     letter-spacing: 0.02em;
     color: #b4387a;
@@ -22,8 +22,8 @@
 }
 
 .header__menu_link {
-    font-weight: 700;
-    font-size: 16px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-base);
     line-height: 112%;
     letter-spacing: 0.02em;
     color: #1d1929;
@@ -36,7 +36,7 @@
 
 @media (max-width: 919px) {
     .header__title {
-        font-size: 20px;
+        font-size: var(--font-size-lg);
     }
 
     .header__menu_list {
@@ -44,7 +44,7 @@
     }
 
     .header__menu_link {
-        font-size: 14px;
+        font-size: var(--font-size-sm);
     }
 }
 
@@ -54,7 +54,7 @@
     }
 
     .header__title {
-        font-size: 18px;
+        font-size: var(--font-size-md);
     }
 
     .header__menu_list {
@@ -62,7 +62,7 @@
     }
 
     .header__menu_link {
-        font-size: 13px;
+        font-size: var(--font-size-xs);
     }
 }
 

@@ -8,7 +8,7 @@ import { commonClient } from '../common/instance'
 import { DOCUMENT_API_URL } from '@/shared/config/document'
 import type { ApplicationResponse } from '@/entities/application/types/application'
 
-export const getPaymentSсhedule = async (applicationId: number) => {
+export const getPaymentSchedule = async (applicationId: number) => {
     try {
         const res = await commonClient.get<ApplicationResponse>(
             `${ADMIN_API_PREFIX}/${FORM_API_URL}/${applicationId}`,

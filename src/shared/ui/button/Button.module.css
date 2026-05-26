@@ -1,11 +1,11 @@
 .btn {
     max-width: 165px;
-    font-weight: 700;
-    font-size: 16px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-base);
     line-height: 112%;
     letter-spacing: 0.02em;
     text-align: center;
-    color: #fff;
+    color: var(--color-white);
     padding: 15px;
     border-radius: 16px;
     border: none;
@@ -29,7 +29,7 @@
 @media (max-width: 499px) {
     .btn {
         padding: 12px;
-        font-size: 14px;
+        font-size: var(--font-size-sm);
         border-radius: 12px;
     }
 }

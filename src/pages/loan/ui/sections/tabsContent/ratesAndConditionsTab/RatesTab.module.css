@@ -25,16 +25,16 @@
 }
 
 .list__item_title {
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
     line-height: 100%;
     letter-spacing: 0.02em;
-    color: #000;
+    color: var(--color-black);
 }
 
 .list__item_descr {
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
     line-height: 100%;
     letter-spacing: 0.02em;
     color: #434343;
@@ -47,8 +47,8 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
     line-height: 100%;
     letter-spacing: 0.02em;
     color: #434343;
@@ -65,11 +65,11 @@
     }
 
     .list__item_title {
-        font-size: 14px;
+        font-size: var(--font-size-sm);
     }
 
     .list__item_descr {
-        font-size: 14px;
+        font-size: var(--font-size-sm);
     }
 }
 
@@ -79,14 +79,14 @@
     }
 
     .list__item_title {
-        font-size: 13px;
+        font-size: var(--font-size-xs);
     }
 
     .list__item_descr {
-        font-size: 13px;
+        font-size: var(--font-size-xs);
     }
 
     .list__item_descr_multiline {
-        font-size: 13px;
+        font-size: var(--font-size-xs);
     }
 }

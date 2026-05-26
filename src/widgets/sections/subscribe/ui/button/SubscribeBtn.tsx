@@ -8,7 +8,11 @@ type SubscribeBtnProps = {
 
 export const SubscribeBtn = ({ disabled }: SubscribeBtnProps) => {
     return (
-        <button type="submit" className={styles.subscribe__form_btn}>
+        <button
+            disabled={disabled}
+            type="submit"
+            className={styles.subscribe__form_btn}
+        >
             <span className={styles.form__btn_icon}>
                 <SendIcon />
             </span>

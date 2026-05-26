@@ -12,10 +12,10 @@
 }
 
 .checkbox__block_text {
-    font-weight: 400;
-    font-size: 18px;
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-md);
     line-height: 112%;
     text-align: center;
-    color: #1a202c;
+    color: var(--color-dark);
     white-space: nowrap;
 }

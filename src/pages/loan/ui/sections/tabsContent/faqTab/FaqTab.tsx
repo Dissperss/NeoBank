@@ -3,7 +3,7 @@ import { Accordion } from '@/shared/ui/accordion'
 import { Section } from '@/shared/ui/section'
 import styles from './FaqTab.module.css'
 
-export const Faqtab = () => {
+export const FaqTab = () => {
     return (
         <Section className={styles.faq__section}>
             <h2 className={styles.faq__title}>Issuing and receiving a card</h2>

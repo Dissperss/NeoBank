@@ -10,7 +10,7 @@
 
 .modal__wrapper {
     padding: 16px;
-    background: #fff;
+    background: var(--color-white);
     max-width: 450px;
     width: 100%;
 }
@@ -22,12 +22,12 @@
 }
 
 .modal__header_title {
-    font-weight: 700;
-    font-size: 16px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-base);
     line-height: 147%;
     letter-spacing: 0.02em;
 
-    color: #1c1c1e;
+    color: var(--color-dark-text);
 }
 
 .modal__header_btn {
@@ -40,11 +40,11 @@
 
 .modal__text {
     margin-top: 16px;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
     line-height: 147%;
     letter-spacing: 0.02em;
-    color: #1a202c;
+    color: var(--color-dark);
 }
 
 .modal__footer {

@@ -9,14 +9,14 @@
     gap: 20px;
     border-radius: 20px;
     box-shadow: 0 10px 20px 0 rgba(54, 58, 120, 0.1);
-    background: #fff;
+    background: var(--color-white);
 }
 
 .subscribed {
     margin-top: 20px;
     text-align: center;
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-lg);
 }
 
 @media (max-width: 919px) {

@@ -4,7 +4,7 @@
 
 .accordion__list_item {
     padding: 32px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--color-border);
     background: rgba(170, 170, 170, 0);
 }
 
@@ -15,20 +15,20 @@
 }
 
 .list__item_title {
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
     line-height: 147%;
     text-align: center;
-    color: #1c1c1e;
+    color: var(--color-dark-text);
 }
 
 .list__item_text {
     display: inline-block;
     margin-top: 50px;
-    font-weight: 400;
-    font-size: 16px;
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-base);
     line-height: 147%;
-    color: #7b7454;
+    color: var(--color-tab-gold);
 }
 
 .list__item_btn {

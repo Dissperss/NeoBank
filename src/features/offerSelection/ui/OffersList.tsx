@@ -6,6 +6,7 @@ import SuccesIcon from '@/shared/assets/icons/loanPage/form/success_input_icon.s
 import styles from './OffersList.module.css'
 import offerImg from '@/shared/assets/images/loanPage/Offer.png'
 import type { CreditOffer } from '@/entities/offer/types/offer'
+import { useMemo } from 'react'
 
 type OfferListProps = {
     offers: CreditOffer[]
@@ -13,11 +14,19 @@ type OfferListProps = {
 }
 
 export const OffersList = ({ offers, onSelect }: OfferListProps) => {
+    const sortedOffers = useMemo(
+        () =>
+            [...offers].sort(
+                (a, b) =>
+                    a.rate - b.rate || a.monthlyPayment - b.monthlyPayment,
+            ),
+        [offers],
+    )
     return (
         <Section className={styles.offers__section}>
             <Container>
                 <div className={styles.offers__wrapper}>
-                    {offers.map((offer, index) => (
+                    {sortedOffers.map((offer, index) => (
                         <div key={index} className={styles.offers__item}>
                             <img
                                 className={styles.offers__item_img}

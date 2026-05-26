@@ -14,7 +14,7 @@
 
 @media (max-width: 599px) {
     .denied__application_title {
-        font-size: 20px;
+        font-size: var(--font-size-lg);
     }
 
     .denied__application_btn {

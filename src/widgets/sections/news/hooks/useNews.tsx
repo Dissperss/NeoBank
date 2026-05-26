@@ -24,7 +24,7 @@ export const useNews = () => {
 
             setNews(filtered)
         } catch (error) {
-            setErrorText('Не удалось загрузить новости')
+            setErrorText('Failed to load news')
             setNews([])
         } finally {
             setIsLoading(false)
