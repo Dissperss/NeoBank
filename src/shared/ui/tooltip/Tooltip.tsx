@@ -5,7 +5,7 @@ type TooltipProps = {
     className?: string
 } & React.PropsWithChildren
 
-export const Tooltip = ({ text, className, children }: TooltipProps) => {
+export const Tooltip = ({ text, className }: TooltipProps) => {
     return (
         <div className={`${styles.tooltip__wrapper} ${className || ''}`}>
             <span className={styles.tooltip}>{text}</span>
