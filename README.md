@@ -2,6 +2,19 @@
 
 Современное банковское приложение на React, TypeScript и Vite.
 
+## Deployment
+
+Приложение развёрнуто на Vercel:
+
+- **URL**: https://neo-bank-xxx.vercel.app
+
+Деплой происходит автоматически при пуше в основную ветку. Проект настроен на сборку Vite с output в папку `dist`.
+
+```bash
+# Production build
+npm run build
+```
+
 ## Tech Stack
 
 - **Frontend**: React 19, TypeScript
@@ -68,15 +81,15 @@ src/
 
 ## Pages & Routing (Module 4)
 
-| Route | Page | Description |
-|---|---|---|
-| `/` | Home | Главная страница |
-| `/loan` | Loan | Оформление заявки (прескоринг) |
-| `/loan/:id/offer` | Offer | Выбор кредитного предложения |
-| `/loan/:id` | Scoring | Анкета для скоринга |
-| `/loan/:id/document` | Document | График платежей и отправка документов |
-| `/loan/:id/document/sign` | Sign | Подписание документов |
-| `/loan/:id/code` | Code | Подтверждение по коду |
+| Route                     | Page     | Description                           |
+| ------------------------- | -------- | ------------------------------------- |
+| `/`                       | Home     | Главная страница                      |
+| `/loan`                   | Loan     | Оформление заявки (прескоринг)        |
+| `/loan/:id/offer`         | Offer    | Выбор кредитного предложения          |
+| `/loan/:id`               | Scoring  | Анкета для скоринга                   |
+| `/loan/:id/document`      | Document | График платежей и отправка документов |
+| `/loan/:id/document/sign` | Sign     | Подписание документов                 |
+| `/loan/:id/code`          | Code     | Подтверждение по коду                 |
 
 ## Features
 
@@ -142,70 +155,70 @@ src/
 
 ### Step Display Mapping
 
-| Step | Номер шага |
-|---|---|
-| PRESCORING | 1 |
-| OFFERS | 1 |
-| SCORING | 2 |
-| DOCUMENTS | 3 |
-| SIGN | 4 |
-| CODE | 4 |
-| COMPLETE | 5 |
+| Step       | Номер шага |
+| ---------- | ---------- |
+| PRESCORING | 1          |
+| OFFERS     | 1          |
+| SCORING    | 2          |
+| DOCUMENTS  | 3          |
+| SIGN       | 4          |
+| CODE       | 4          |
+| COMPLETE   | 5          |
 
 ## Shared UI Components
 
-| Component | Module | Description |
-|---|---|---|
-| Tabs | 3 | Tab navigation with configurable content |
-| Accordion | 3 | Expandable FAQ sections |
-| Form Components | 3 | FormField, FormInput, FormSelect, FormLabel, FormWrapper |
-| Divider | 3 | Visual separator |
-| Tooltip | 3 | Hover tooltips |
-| Button | 3 | Enhanced with loading state |
-| Checkbox | 4 | Controlled checkbox |
-| TableTitle | 4 | Sortable table header |
-| ModalDeny | 4 | Deny confirmation (confirm + success states) |
-| DeniedApplication | 4 | Отказ в кредите |
-| ErrorMessage | 4 | Ошибка с кнопкой повтора |
-| Loader | 4 | Индикатор загрузки |
+| Component         | Module | Description                                              |
+| ----------------- | ------ | -------------------------------------------------------- |
+| Tabs              | 3      | Tab navigation with configurable content                 |
+| Accordion         | 3      | Expandable FAQ sections                                  |
+| Form Components   | 3      | FormField, FormInput, FormSelect, FormLabel, FormWrapper |
+| Divider           | 3      | Visual separator                                         |
+| Tooltip           | 3      | Hover tooltips                                           |
+| Button            | 3      | Enhanced with loading state                              |
+| Checkbox          | 4      | Controlled checkbox                                      |
+| TableTitle        | 4      | Sortable table header                                    |
+| ModalDeny         | 4      | Deny confirmation (confirm + success states)             |
+| DeniedApplication | 4      | Отказ в кредите                                          |
+| ErrorMessage      | 4      | Ошибка с кнопкой повтора                                 |
+| Loader            | 4      | Индикатор загрузки                                       |
 
 ## Sections (Home Page)
 
-| Section | Description |
-|---|---|
-| Hero | Main landing banner |
-| Features | Banking features showcase |
-| Exchange Rates | Currency rates widget |
-| News | Financial news feed with scrollable slider |
-| Subscribe | Email subscription form with validation |
-| Map | Office locations |
-| Header/Footer | Navigation and footer |
+| Section        | Description                                |
+| -------------- | ------------------------------------------ |
+| Hero           | Main landing banner                        |
+| Features       | Banking features showcase                  |
+| Exchange Rates | Currency rates widget                      |
+| News           | Financial news feed with scrollable slider |
+| Subscribe      | Email subscription form with validation    |
+| Map            | Office locations                           |
+| Header/Footer  | Navigation and footer                      |
 
 ## Backend Services (Docker Compose)
 
-| Service | Description |
-|---|---|
-| Gateway | API Gateway (port 8080) |
-| Application | Main application service |
-| Conveyor | Credit processing pipeline |
-| Deal | Deal management (PostgreSQL) |
-| Dossier | Customer dossier service (email sending) |
-| Audit | Audit logging (Redis) |
-| Kafka | Message broker |
-| Zookeeper | Kafka coordination |
+| Service     | Description                              |
+| ----------- | ---------------------------------------- |
+| Gateway     | API Gateway (port 8080)                  |
+| Application | Main application service                 |
+| Conveyor    | Credit processing pipeline               |
+| Deal        | Deal management (PostgreSQL)             |
+| Dossier     | Customer dossier service (email sending) |
+| Audit       | Audit logging (Redis)                    |
+| Kafka       | Message broker                           |
+| Zookeeper   | Kafka coordination                       |
 
 ## API Endpoints (Module 4)
 
-| Method | Endpoint | Feature |
-|---|---|---|
-| POST | `/application` | Подача заявки (прескоринг) |
-| POST | `/application/apply` | Выбор предложения |
-| PUT | `/application/registration/{id}` | Отправка скоринговой анкеты |
-| GET | `/admin/application/{id}` | Получить статус + график платежей |
-| POST | `/deny/{id}` | Отклонить заявку |
-| POST | `/document/{id}` | Подтвердить документы |
-| POST | `/document/{id}/sign` | Подписать документы |
-| POST | `/document/{id}/sign/code` | Подтвердить код |
+| Method | Endpoint                         | Feature                           |
+| ------ | -------------------------------- | --------------------------------- |
+| POST   | `/application`                   | Подача заявки (прескоринг)        |
+| POST   | `/application/apply`             | Выбор предложения                 |
+| PUT    | `/application/registration/{id}` | Отправка скоринговой анкеты       |
+| GET    | `/admin/application/{id}`        | Получить статус + график платежей |
+| POST   | `/deny/{id}`                     | Отклонить заявку                  |
+| POST   | `/document/{id}`                 | Подтвердить документы             |
+| POST   | `/document/{id}/sign`            | Подписать документы               |
+| POST   | `/document/{id}/sign/code`       | Подтвердить код                   |
 
 ## Testing
 
@@ -223,23 +236,23 @@ npx vitest
 - **Framework**: Vitest + @testing-library/react
 - **20 test files, 80 tests**
 - **Тестируемые компоненты**:
-  - Prescoring Form, Scoring Form, Offers List/Page
-  - Code Input/Confirm/Completed
-  - Sign Docs, Payment Schedule, DocumentFormed
-  - DeniedApplication, ModalDeny, ScoringDecision, OfferConfirmation
-  - Store, stepToRoute, AmountControlSlider/Result
-  - HomePage (интеграционные)
+    - Prescoring Form, Scoring Form, Offers List/Page
+    - Code Input/Confirm/Completed
+    - Sign Docs, Payment Schedule, DocumentFormed
+    - DeniedApplication, ModalDeny, ScoringDecision, OfferConfirmation
+    - Store, stepToRoute, AmountControlSlider/Result
+    - HomePage (интеграционные)
 
 ## Scripts
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start dev server |
-| `npm run build` | Build for production |
-| `npm run test` | Run all tests |
-| `npm run lint` | Run ESLint |
-| `npm run lint:fix` | Fix ESLint errors |
-| `npm run format` | Format with Prettier |
+| Command            | Description          |
+| ------------------ | -------------------- |
+| `npm run dev`      | Start dev server     |
+| `npm run build`    | Build for production |
+| `npm run test`     | Run all tests        |
+| `npm run lint`     | Run ESLint           |
+| `npm run lint:fix` | Fix ESLint errors    |
+| `npm run format`   | Format with Prettier |
 
 ## Environment Variables
 
@@ -250,6 +263,7 @@ VITE_NEWS_API_KEY=your_news_api_key
 ## API Configuration
 
 The project uses external APIs:
+
 - **News**: NewsAPI (https://newsapi.org)
 - **Currency**: ExchangeRate-API (https://v6.exchangerate-api.com)
 - **Credit Conveyor**: Local backend via Docker Compose (port 8080)
